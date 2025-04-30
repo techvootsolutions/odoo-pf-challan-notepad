@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_pf_challan_notepad_wizard" model="ir.ui.view">
+        <field name="name">view.pf.challan.notepad.wizard</field>
+        <field name="model">pf.challan.notepad.wizard</field>
+        <field name="arch" type="xml">
+            <form string="PF Challan Notepad">
+                <span class="o_form_label text-muted">Generate an Text report based on Paid payslips for the selected period of time.</span>
+                <footer>
+                    <button name="action_export_text" string="Export Text" type="object" class="btn-primary" data-hotkey="q"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel" data-hotkey="x" />
+                </footer>
+                <group class="mt-2">
+                    <field name="month" class="o_hr_narrow_field"/>
+                    <field name="year" class="o_hr_narrow_field" options="{'type': 'number'}"/>
+                    <separator string="Employees" />
+                    <field name="employee_ids" nolabel="1" colspan="2" context="{'list_view_ref' : 'l10n_in_hr_payroll.hr_employee_tree_inherit'}">
+                        <list no_open="True" create="False">
+                            <field name="name" string="Employee Name"/>
+                            <field name="registration_number" string="Employee Code"/>
+                            <field name="department_id" string="Department"/>
+                            <field name="job_id" string="Job Position"/>
+                        </list>
+                    </field>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_pf_challan_notepad" model="ir.actions.act_window">
+        <field name="name">PF Challan Notepad</field>
+        <field name="res_model">pf.challan.notepad.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem
+        name="PF Challan Notepad"
+        parent="l10n_in_hr_payroll.menu_reporting_l10n_in"
+        action="action_pf_challan_notepad"
+        sequence="400"
+        id="menu_pf_challan_notepad"
+        groups="hr_payroll.group_hr_payroll_manager,hr_payroll.group_hr_payroll_user"
+        />
+
+</odoo>
