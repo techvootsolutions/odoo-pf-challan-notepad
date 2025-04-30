@@ -11,6 +11,7 @@
     "application": False,
     "installable": True,
     "depends": ["l10n_in_hr_payroll"],
+    "images": ["static/description/tv_pf_challan_notpad.gif"],
     "data": [
         "security/ir.model.access.csv",
         "wizard/hr_payroll_pf_challan_notepad_views.xml",
