@@ -7,7 +7,7 @@
     "company": "Techvoot Solutions",
     "maintainer": "Techvoot Solutions",
     "website": "https://www.techvoot.com",
-    "license": "AGPL-3",
+    "license": "OEEL-1",
     "application": False,
     "installable": True,
     "depends": ["l10n_in_hr_payroll"],
