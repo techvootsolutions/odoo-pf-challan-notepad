@@ -1,769 +1,2292 @@
-<!DOCTYPE html>
-<html lang="en">
+<!-- PF Challan Notepad for Odoo 18 App Store (Bootstrap 5 fragment, no custom CSS/JS) -->
 
-<head>
-    <title>PF Challan Notepad for Odoo | PF Contribution Report | Techvoot</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description"
-        content="Prepare and record Provident Fund (PF) contribution details in Odoo with Techvoot's PF Challan Notepad. Generate structured PF reports from paid payslips before official challan submission. Compatible with Odoo Enterprise." />
-    <meta name="keywords"
-        content="Odoo PF challan notepad, PF challan Odoo, Indian payroll PF report Odoo, PF contribution export Odoo, EPFO challan Odoo, Techvoot Odoo apps" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-
-    <style>
-        .nav-pills .nav-link {
-            color: #6b7c8e !important;
-            background: transparent !important;
-            border: none !important;
-            transition: all 0.2s;
-        }
-
-        .nav-pills .nav-link:hover {
-            background: #e6f7f8 !important;
-            color: #2fa3a8 !important;
-        }
-
-        .nav-pills .nav-link.active {
-            background-color: #2fa3a8 !important;
-            color: #ffffff !important;
-            box-shadow: 0 4px 12px rgba(47, 163, 168, 0.25) !important;
-        }
-    </style>
-</head>
-
-<body style="font-family: 'Plus Jakarta Sans', sans-serif; background: #f7fafa; color: #1a2332; margin: 0; padding: 0;">
-
-    <div style="font-family: 'Plus Jakarta Sans', sans-serif; background: #f7fafa; color: #1a2332; width: 100%;">
-
-        <!-- ══════════════════════════════════════════
-         HEADER
-    ══════════════════════════════════════════ -->
-        <div class="bg-white shadow border-bottom border-2">
-            <div class="row gy-3">
-                <div class="col-md-4">
-                    <a class="btn p-1" style="padding: 4px; display: inline-block;">
-                        <img src="images/techvoot.svg" alt="techvoot-logo"
-                            style="height:36px !important; width: auto !important; display: block;">
-                    </a>
-                </div>
-                <div class="col-md-4">
-                    <div class="text-center">
-                        <a href="https://apps.odoo.com/apps/modules/browse?search=techvoot" target="_blank"
-                            class="btn btn-sm mb-2 mb-lg-0 p-2"
-                            style="font-size: 13px;font-size: 14px; font-weight: 500;background-color: #2fa3a8; color: #ffffff;"><i
-                                class="fa fa-hand-o-right mr-1"></i> <span class="d-none d-sm-inline">Techvoot</span>
-                            All Apps</a>
-                    </div>
-                </div>
-                <div class="col-md-4 gap-2 hstack justify-content-end">
-                    <!-- <span
-                        style="display: inline-flex; align-items: center; gap: 5px; background: transparent; background-color: #2fa3a8; color: #ffffff; font-size: 13px; font-weight: 600; padding: 4px 12px; border-radius: 20px; margin-right: 4px;"><i
-                            class="fa fa-check" style="margin-right: 4px;"></i> Community</span> -->
-                    <span class="btn btn-sm p-2"
-                        style="font-size: 13px;font-size: 14px; font-weight: 500;background-color: #2fa3a8; color: #ffffff;"><i
-                            class="fa fa-check"></i> Community</span>
-                    <span class="btn btn-sm p-2"
-                        style="font-size: 13px;font-size: 14px; font-weight: 500;background-color: #2fa3a8; color: #ffffff;"><i
-                            class="fa fa-check"></i> Enterprise</span>
-                    <span class="btn btn-sm p-2"
-                        style="font-size: 13px;font-size: 14px; font-weight: 500;background-color: #2fa3a8; color: #ffffff;"><i
-                            class="fa fa-check"></i> Odoo.sh</span>
-                </div>
+<!-- ==================== HEADER BAR ==================== -->
+<section style="background-color: #ffffff; border-bottom: 1px solid #e8f8f8">
+    <div class="container py-3">
+        <div class="row align-items-center g-3">
+            <div class="col-lg-4 col-md-12 col-12 text-center text-lg-start">
+                <img src="images/techvoot.svg" alt="Techvoot Solutions" class="img-fluid"
+                    style="height: 36px; width: auto" />
+            </div>
+            <div class="col-lg-4 col-md-12 col-12 text-center">
+                <span class="badge rounded-pill me-1 mb-1" style="
+            background-color: #ffffff;
+            color: #2fa3a8;
+            border: 1px solid #d4edef;
+            font-size: 11px;
+            padding: 8px 14px;
+          ">
+                    Odoo 18
+                </span>
+                <!-- <span
+          class="badge rounded-pill me-1 mb-1"
+          style="
+            background-color: #ffffff;
+            color: #2fa3a8;
+            border: 1px solid #d4edef;
+            font-size: 11px;
+            padding: 8px 14px;
+          "
+        >
+          Community
+        </span> -->
+                <span class="badge rounded-pill me-1 mb-1" style="
+            background-color: #ffffff;
+            color: #2fa3a8;
+            border: 1px solid #d4edef;
+            font-size: 11px;
+            padding: 8px 14px;
+          ">
+                    Enterprise
+                </span>
+                <span class="badge rounded-pill me-1 mb-1" style="
+            background-color: #ffffff;
+            color: #2fa3a8;
+            border: 1px solid #d4edef;
+            font-size: 11px;
+            padding: 8px 14px;
+          ">
+                    Odoo.sh
+                </span>
+            </div>
+            <div class="col-lg-4 col-md-12 col-12 text-center text-lg-end">
+                <span class="d-inline-block px-3 py-2 rounded-pill fw-bold small"
+                    style="background-color: #e8f8f8; color: #1f7d82">www.techvoot.com</span>
             </div>
         </div>
-
-
-        <!-- ══════════════════════════════════════════
-         HERO
-    ══════════════════════════════════════════ -->
-        <div
-            style="background: linear-gradient(135deg, #e6f7f8 0%, #f0fbfb 50%, #ffffff 100%); padding: 56px 24px 40px; text-align: center; position: relative;">
-            <h1
-                style="font-size: 32px; font-weight: 800; color: #2fa3a8; text-transform: uppercase; letter-spacing: 1.5px; margin: 0 0 8px 0;">
-                PF Challan Notepad for Odoo</h1>
-            <span
-                style="display: block; width: 72px; height: 4px; background: linear-gradient(90deg, #2fa3a8, #7dd4d7); border-radius: 4px; margin: 14px auto 0;"></span>
-            <p style="font-size: 15px; color: #3d4f61; max-width: 740px; margin: 20px auto 0; line-height: 1.8;">
-                A PF Challan Notepad is a simple document report used to prepare and record details related to Provident
-                Fund (PF) contributions, before submitting the official PF challan to the government portal.
-                <b>Techvoot's PF Challan Notepad</b> helps businesses prepare, organize, and review PF contribution
-                details in a structured format directly within Odoo Enterprise, keeping employee records accurate and
-                simplifying verification before challan submission.
-            </p>
-        </div>
-
-
-        <!-- ══════════════════════════════════════════
-         PAIN → SOLUTION + STATS
-    ══════════════════════════════════════════ -->
-        <div style="padding: 52px 0; background: #ffffff;">
-            <div class="container">
-                <div class="text-center" style="margin-bottom: 28px;">
-                    <h2 style="font-size: 26px; font-weight: 800; color: #2fa3a8; margin: 0 0 6px 0;">Overview</h2>
-                    <span
-                        style="display: block; width: 72px; height: 4px; background: linear-gradient(90deg, #2fa3a8, #7dd4d7); border-radius: 4px; margin: 14px auto 0;"></span>
-                </div>
-                <div class="row justify-content-center" style="margin-bottom: 40px;">
-                    <div class="col-lg-10">
-                        <div
-                            style="background: #ffffff; border: 1px solid #d4edef; border-left: 5px solid #2fa3a8; border-radius: 10px; padding: 22px 28px; box-shadow: 0 4px 20px rgba(47,163,168,.10); font-size: 15px; color: #3d4f61; line-height: 1.85;">
-                            Preparing and maintaining Provident Fund (PF) contribution records manually can be
-                            challenging, especially when reviewing employee contributions before generating the official
-                            PF challan. Missing or incorrect information may lead to additional verification efforts and
-                            delays.
-                            <br><br>
-                            <b>PF Challan Notepad</b> simplifies this process by providing a structured report for
-                            recording and reviewing PF contribution details in one place. It helps organizations
-                            maintain accurate records, verify contribution information efficiently, and keep PF-related
-                            documentation organized before challan submission to the government portal.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row justify-content-center text-center">
-                    <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-3">
-                        <div
-                            style="background: #ffffff; border: 1px solid #d4edef; border-top: 4px solid #2fa3a8; border-radius: 14px; padding: 24px 16px; text-align: center; box-shadow: 0 4px 18px rgba(47,163,168,.13);">
-                            <div style="font-size: 38px; font-weight: 800; color: #2fa3a8; line-height: 1;">100%</div>
-                            <div style="font-size: 14px; color: #6b7c8e; margin-top: 6px; font-weight: 600;">Organized
-                                PF Records</div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-3">
-                        <div
-                            style="background: #ffffff; border: 1px solid #d4edef; border-top: 4px solid #2fa3a8; border-radius: 14px; padding: 24px 16px; text-align: center; box-shadow: 0 4px 18px rgba(47,163,168,.13);">
-                            <div style="font-size: 38px; font-weight: 800; color: #2fa3a8; line-height: 1;">Bulk</div>
-                            <div style="font-size: 14px; color: #6b7c8e; margin-top: 6px; font-weight: 600;">PF Challan
-                                Preparation</div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-3">
-                        <div
-                            style="background: #ffffff; border: 1px solid #d4edef; border-top: 4px solid #2fa3a8; border-radius: 14px; padding: 24px 16px; text-align: center; box-shadow: 0 4px 18px rgba(47,163,168,.13);">
-                            <div style="font-size: 38px; font-weight: 800; color: #2fa3a8; line-height: 1;">v18</div>
-                            <div style="font-size: 14px; color: #6b7c8e; margin-top: 6px; font-weight: 600;">Compatible
-                                with Odoo 18</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-        <!-- ══════════════════════════════════════════
-         KEY FEATURES
-    ══════════════════════════════════════════ -->
-        <div style="padding: 52px 0; background: #f0fbfb;">
-            <div class="container">
-                <div class="text-center" style="margin-bottom: 40px;">
-                    <h2 style="font-size: 26px; font-weight: 800; color: #2fa3a8; margin: 0 0 6px 0;">Key Features</h2>
-                    <span
-                        style="display: block; width: 72px; height: 4px; background: linear-gradient(90deg, #2fa3a8, #7dd4d7); border-radius: 4px; margin: 14px auto 0;"></span>
-                    <p
-                        style="font-size: 15px; color: #6b7c8e; max-width: 640px; margin: 10px auto 0; line-height: 1.7;">
-                        Everything your team needs to prepare, review, and maintain Provident Fund (PF) contribution
-                        records before generating the official PF challan.</p>
-                </div>
-                <div class="row">
-                    <div class="col-lg-4 col-md-6 col-12 mb-4">
-                        <div class="card h-100 shadow-sm border-0"
-                            style="border-radius:12px; border-top:4px solid #2fa3a8; background:#ffffff;">
-                            <div class="card-body p-4">
-                                <div class="d-flex align-items-center justify-content-center mb-3 rounded"
-                                    style="width:52px; height:52px; background-color:#e8f8f8; color:#2fa3a8; font-size:24px;">
-                                    <i class="fa fa-barcode"></i>
-                                </div>
-                                <h3 class="h5 font-weight-bold mb-2"
-                                    style="color:#1b325f; font-size:16px; font-weight:700;">PF Challan Notepad Report
-                                </h3>
-                                <p class="mb-0 small" style="color:#5a6d85; line-height:1.7;">Generate a simple document
-                                    report to prepare and record PF contribution details before official challan
-                                    submission.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-12 mb-4">
-                        <div class="card h-100 shadow-sm border-0"
-                            style="border-radius:12px; border-top:4px solid #2fa3a8; background:#ffffff;">
-                            <div class="card-body p-4">
-                                <div class="d-flex align-items-center justify-content-center mb-3 rounded"
-                                    style="width:52px; height:52px; background-color:#e8f8f8; color:#2fa3a8; font-size:24px;">
-                                    <i class="fa fa-sliders"></i>
-                                </div>
-                                <h3 class="h5 font-weight-bold mb-2"
-                                    style="color:#1b325f; font-size:16px; font-weight:700;">Company &amp; Employee Setup
-                                </h3>
-                                <p class="mb-0 small" style="color:#5a6d85; line-height:1.7;">Works with INR currency
-                                    configuration, employee company assignment, and complete employee personal
-                                    information.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-12 mb-4">
-                        <div class="card h-100 shadow-sm border-0"
-                            style="border-radius:12px; border-top:4px solid #2fa3a8; background:#ffffff;">
-                            <div class="card-body p-4">
-                                <div class="d-flex align-items-center justify-content-center mb-3 rounded"
-                                    style="width:52px; height:52px; background-color:#e8f8f8; color:#2fa3a8; font-size:24px;">
-                                    <i class="fa fa-th-list"></i>
-                                </div>
-                                <h3 class="h5 font-weight-bold mb-2"
-                                    style="color:#1b325f; font-size:16px; font-weight:700;">Salary Rule Integration</h3>
-                                <p class="mb-0 small" style="color:#5a6d85; line-height:1.7;">Supports PF Employee,
-                                    PF-Employeer, and Pension-Employeer salary rules required for accurate PF
-                                    contribution calculation.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-12 mb-4">
-                        <div class="card h-100 shadow-sm border-0"
-                            style="border-radius:12px; border-top:4px solid #2fa3a8; background:#ffffff;">
-                            <div class="card-body p-4">
-                                <div class="d-flex align-items-center justify-content-center mb-3 rounded"
-                                    style="width:52px; height:52px; background-color:#e8f8f8; color:#2fa3a8; font-size:24px;">
-                                    <i class="fa fa-picture-o"></i>
-                                </div>
-                                <h3 class="h5 font-weight-bold mb-2"
-                                    style="color:#1b325f; font-size:16px; font-weight:700;">Payslip-Based Data</h3>
-                                <p class="mb-0 small" style="color:#5a6d85; line-height:1.7;">Generate PF reports from
-                                    salary slips created using the Indian salary structure with confirmed payslip data.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-12 mb-4">
-                        <div class="card h-100 shadow-sm border-0"
-                            style="border-radius:12px; border-top:4px solid #2fa3a8; background:#ffffff;">
-                            <div class="card-body p-4">
-                                <div class="d-flex align-items-center justify-content-center mb-3 rounded"
-                                    style="width:52px; height:52px; background-color:#e8f8f8; color:#2fa3a8; font-size:24px;">
-                                    <i class="fa fa-shield"></i>
-                                </div>
-                                <h3 class="h5 font-weight-bold mb-2"
-                                    style="color:#1b325f; font-size:16px; font-weight:700;">Indian Payroll Integration
-                                </h3>
-                                <p class="mb-0 small" style="color:#5a6d85; line-height:1.7;">Integrates seamlessly with
-                                    Odoo Indian HR Payroll module without requiring external tools or spreadsheets.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-12 mb-4">
-                        <div class="card h-100 shadow-sm border-0"
-                            style="border-radius:12px; border-top:4px solid #2fa3a8; background:#ffffff;">
-                            <div class="card-body p-4">
-                                <div class="d-flex align-items-center justify-content-center mb-3 rounded"
-                                    style="width:52px; height:52px; background-color:#e8f8f8; color:#2fa3a8; font-size:24px;">
-                                    <i class="fa fa-refresh"></i>
-                                </div>
-                                <h3 class="h5 font-weight-bold mb-2"
-                                    style="color:#1b325f; font-size:16px; font-weight:700;">Wizard Export from Reporting
-                                </h3>
-                                <p class="mb-0 small" style="color:#5a6d85; line-height:1.7;">Open the PF Challan
-                                    Notepad wizard from the Reporting menu, enter required data, and export the report
-                                    as needed.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Why choose block -->
-                <div class="row justify-content-center" style="margin-top: 20px;">
-                    <div class="col-lg-10">
-                        <div
-                            style="background: #ffffff; border: 1px solid #d4edef; border-radius: 14px; padding: 32px 36px; box-shadow: 0 4px 22px rgba(0,0,0,.06);">
-                            <h3
-                                style="font-size: 20px; font-weight: 800; color: #2fa3a8; margin-top: 0; margin-bottom: 14px;">
-                                <i class="fa fa-star" style="margin-right: 8px;"></i>Why Businesses Choose This Odoo PF
-                                Challan Notepad Module
-                            </h3>
-                            <p style="font-size: 15px; color: #3d4f61; line-height: 1.85; margin-bottom: 14px;">
-                                Manually preparing PF contribution records for multiple employees is time-consuming and
-                                error-prone.
-                                Businesses need a reliable way to review employee PF details before submitting the
-                                official challan to the government portal. Missing configuration or incorrect payslip
-                                data can cause compliance delays and rework.
-                            </p>
-
-                            <p style="font-size: 15px; color: #3d4f61; line-height: 1.85; margin-bottom: 14px;">
-                                <b>Techvoot's PF Challan Notepad</b> is built specifically for Odoo Enterprise users
-                                managing Indian payroll. It integrates natively
-                                with Odoo's Indian HR Payroll, salary structures, and payslip processing so PF
-                                contribution data is pulled accurately from confirmed payslips.
-                            </p>
-
-                            <p style="font-size: 15px; color: #3d4f61; line-height: 1.85; margin-bottom: 0;">
-                                Compatible with <b>Odoo Enterprise</b>, this module helps HR and payroll teams maintain
-                                complete visibility
-                                over PF contribution records. Maintained by <b>Techvoot Solutions</b> with contributions
-                                from Kevin Baldha and Dhaval Baldha.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-        <!-- ══════════════════════════════════════════
-         TABS
-    ══════════════════════════════════════════ -->
-        <div style="padding: 52px 0; background: #ffffff;">
-            <div class="container">
-                <!-- Tab Nav -->
-                <div
-                    style="background: #ffffff; border-radius: 16px 16px 0 0; padding: 8px 12px 0; box-shadow: 0 -2px 16px rgba(47,163,168,.07); display: flex; flex-wrap: wrap; justify-content: center; border-bottom: 3px solid #e6f7f8;">
-                    <ul class="nav nav-pills justify-content-center" role="tablist"
-                        style="border-bottom: none; display: flex; flex-wrap: wrap; justify-content: center; width: 100%; gap: 6px; margin: 0; padding: 0; list-style: none;">
-                        <li style="margin: 0;">
-                            <a class="nav-link active" data-toggle="tab" data-bs-toggle="tab" href="#tab-docs"
-                                role="tab"
-                                style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 15px; font-weight: 600; padding: 11px 22px; border-radius: 10px 10px 0 0; cursor: pointer; text-decoration: none; display: block; border: none; text-align: center;">
-                                <i class="fa fa-book" style="margin-right: 5px;"></i> Documentation
-                            </a>
-                        </li>
-                        <li style="margin: 0;">
-                            <a class="nav-link" data-toggle="tab" data-bs-toggle="tab" href="#tab-release" role="tab"
-                                style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 15px; font-weight: 600; padding: 11px 22px; border-radius: 10px 10px 0 0; cursor: pointer; text-decoration: none; display: block; border: none; text-align: center;">
-                                <i class="fa fa-tag" style="margin-right: 5px;"></i> Releases
-                            </a>
-                        </li>
-                        <li style="margin: 0;">
-                            <a class="nav-link" data-toggle="tab" data-bs-toggle="tab" href="#tab-faq" role="tab"
-                                style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 15px; font-weight: 600; padding: 11px 22px; border-radius: 10px 10px 0 0; cursor: pointer; text-decoration: none; display: block; border: none; text-align: center;">
-                                <i class="fa fa-question-circle" style="margin-right: 5px;"></i> FAQs
-                            </a>
-                        </li>
-                        <li style="margin: 0;">
-                            <a class="nav-link" data-toggle="tab" data-bs-toggle="tab" href="#tab-support" role="tab"
-                                style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 15px; font-weight: 600; padding: 11px 22px; border-radius: 10px 10px 0 0; cursor: pointer; text-decoration: none; display: block; border: none; text-align: center;">
-                                <i class="fa fa-life-ring" style="margin-right: 5px;"></i> Support
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Tab Content -->
-                <div class="tab-content"
-                    style="background: #ffffff; border-radius: 0 0 16px 16px; box-shadow: 0 6px 24px rgba(0,0,0,0.06); padding: 36px 28px; border: 1px solid #d4edef; border-top: none;">
-
-                    <!-- ── DOCUMENTATION ── -->
-                    <div id="tab-docs" class="tab-pane active show" role="tabpanel">
-                        <div style="display: block; flex-direction: column; align-items: center; margin-bottom: 40px;">
-                            <div style="width: 100%; max-width: 90%; text-align: left; margin-bottom: 16px;">
-                                <ul
-                                    style="list-style-type: disc; padding-left: 20px; margin: 0; color: #1b325f; font-size: 15px; font-weight: 500; line-height: 1.7;">
-                                    <li>Configure the company settings to use INR currency.</li>
-                                </ul>
-                            </div>
-                            <img src="s01.png" alt="Configure Company INR Currency"
-                                style="width: 100%; max-width: 90%; border-radius: 10px; border: 1px solid #e2e8f0; box-shadow: 0 4px 20px rgba(0,0,0,0.08);" />
-                        </div>
-                        <div style="display: block; flex-direction: column; align-items: center; margin-bottom: 40px;">
-                            <div style="width: 100%; max-width: 90%; text-align: left; margin-bottom: 16px;">
-                                <ul
-                                    style="list-style-type: disc; padding-left: 20px; margin: 0; color: #1b325f; font-size: 15px; font-weight: 500; line-height: 1.7;">
-                                    <li>Configure the employee with the correct company assignment.</li>
-                                </ul>
-                            </div>
-                            <img src="s02.png" alt="Configure Employee Company"
-                                style="width: 100%; max-width: 90%; border-radius: 10px; border: 1px solid #e2e8f0; box-shadow: 0 4px 20px rgba(0,0,0,0.08);" />
-                        </div>
-                        <div style="display: block; flex-direction: column; align-items: center; margin-bottom: 40px;">
-                            <div style="width: 100%; max-width: 90%; text-align: left; margin-bottom: 16px;">
-                                <ul
-                                    style="list-style-type: disc; padding-left: 20px; margin: 0; color: #1b325f; font-size: 15px; font-weight: 500; line-height: 1.7;">
-                                    <li>Configure the employee with complete personal information including UAN details.
-                                    </li>
-                                </ul>
-                            </div>
-                            <img src="s03.png" alt="Configure Employee Personal Information"
-                                style="width: 100%; max-width: 90%; border-radius: 10px; border: 1px solid #e2e8f0; box-shadow: 0 4px 20px rgba(0,0,0,0.08);" />
-                        </div>
-                        <div style="display: block; flex-direction: column; align-items: center; margin-bottom: 40px;">
-                            <div style="width: 100%; max-width: 90%; text-align: left; margin-bottom: 16px;">
-                                <ul
-                                    style="list-style-type: disc; padding-left: 20px; margin: 0; color: #1b325f; font-size: 15px; font-weight: 500; line-height: 1.7;">
-                                    <li>Configure salary rules for PF Employee, PF-Employeer, and Pension-Employeer in
-                                        the Indian salary structure.</li>
-                                </ul>
-                            </div>
-                            <img src="s04.png" alt="Configure PF Salary Rules"
-                                style="width: 100%; max-width: 90%; border-radius: 10px; border: 1px solid #e2e8f0; box-shadow: 0 4px 20px rgba(0,0,0,0.08);" />
-                        </div>
-                        <div style="display: block; flex-direction: column; align-items: center; margin-bottom: 40px;">
-                            <div style="width: 100%; max-width: 90%; text-align: left; margin-bottom: 16px;">
-                                <ul
-                                    style="list-style-type: disc; padding-left: 20px; margin: 0; color: #1b325f; font-size: 15px; font-weight: 500; line-height: 1.7;">
-                                    <li>Generate a salary slip based on the Indian salary structure for the selected
-                                        period.</li>
-                                </ul>
-                            </div>
-                            <img src="s05.png" alt="Generate Indian Salary Slip"
-                                style="width: 100%; max-width: 90%; border-radius: 10px; border: 1px solid #e2e8f0; box-shadow: 0 4px 20px rgba(0,0,0,0.08);" />
-                        </div>
-                        <div style="display: block; flex-direction: column; align-items: center; margin-bottom: 40px;">
-                            <div style="width: 100%; max-width: 90%; text-align: left; margin-bottom: 16px;">
-                                <ul
-                                    style="list-style-type: disc; padding-left: 20px; margin: 0; color: #1b325f; font-size: 15px; font-weight: 500; line-height: 1.7;">
-                                    <li>Open the PF Challan Notepad wizard from the Reporting menu, enter the required
-                                        data, and export the PF Challan Notepad report.</li>
-                                </ul>
-                            </div>
-                            <img src="s06.png" alt="PF Challan Notepad Report Export"
-                                style="width: 100%; max-width: 90%; border-radius: 10px; border: 1px solid #e2e8f0; box-shadow: 0 4px 20px rgba(0,0,0,0.08);" />
-                        </div>
-                    </div>
-
-                    <!-- ── RELEASES ── -->
-                    <div id="tab-release" class="tab-pane fade" role="tabpanel" style="padding: 10px 0;">
-                        <div
-                            style="background: #f0fbfb; border-left: 5px solid #2fa3a8; border-radius: 10px; padding: 20px 24px;">
-                            <div
-                                style="font-size: 15px; font-weight: 700; color: #1a2332; display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
-                                <i class="fa fa-code-fork"
-                                    style="color: #2fa3a8; font-size: 18px; margin-right: 8px;"></i>
-                                <span>Version 18.0.1.0</span>
-                                <span style="color: #aaa; margin: 0 5px;">|</span>
-                                <span style="color: #2fa3a8;">Released on: 30<sup>th</sup> April 2025</span>
-                            </div>
-                            <div style="padding-top: 14px; display: flex; align-items: center; gap: 10px;">
-                                <span
-                                    style="background: #2fa3a8; color: #ffffff; font-size: 9px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; padding: 4px 12px; border-radius: 4px; margin-right: 10px;">Initial</span>
-                                <span style="font-size: 15px; color: #3d4f61;">Initial Release.</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- ── FAQs ── -->
-                    <div id="tab-faq" class="tab-pane fade" role="tabpanel" style="padding: 10px 0;">
-                        <div
-                            style="background: #f0fbfb; border-radius: 10px; margin-bottom: 12px; overflow: hidden; border: 1px solid #d4edef; padding: 16px 20px;">
-                            <div
-                                style="font-size: 15px; font-weight: 700; color: #1a2332; margin-bottom: 8px; display: flex; align-items: center;">
-                                <i class="fa fa-chevron-right"
-                                    style="color: #2fa3a8; font-size: 16px; margin-right: 10px;"></i>
-                                Is This App Compatible With Odoo Community?
-                            </div>
-                            <div style="padding-left: 26px; font-size: 15px; color: #3d4f61; line-height: 1.7;">
-                                This module is compatible with Odoo Enterprise Edition only and is not supported in Odoo
-                                Community Edition.
-                            </div>
-                        </div>
-                        <div
-                            style="background: #f0fbfb; border-radius: 10px; margin-bottom: 12px; overflow: hidden; border: 1px solid #d4edef; padding: 16px 20px;">
-                            <div
-                                style="font-size: 15px; font-weight: 700; color: #1a2332; margin-bottom: 8px; display: flex; align-items: center;">
-                                <i class="fa fa-chevron-right"
-                                    style="color: #2fa3a8; font-size: 16px; margin-right: 10px;"></i>
-                                Is This App Compatible With Odoo Enterprise?
-                            </div>
-                            <div style="padding-left: 26px; font-size: 15px; color: #3d4f61; line-height: 1.7;">
-                                Yes, this app works perfectly with Odoo Enterprise.
-                            </div>
-                        </div>
-                        <div
-                            style="background: #f0fbfb; border-radius: 10px; margin-bottom: 12px; overflow: hidden; border: 1px solid #d4edef; padding: 16px 20px;">
-                            <div
-                                style="font-size: 15px; font-weight: 700; color: #1a2332; margin-bottom: 8px; display: flex; align-items: center;">
-                                <i class="fa fa-chevron-right"
-                                    style="color: #2fa3a8; font-size: 16px; margin-right: 10px;"></i>
-                                What Does PF Challan Notepad Do?
-                            </div>
-                            <div style="padding-left: 26px; font-size: 15px; color: #3d4f61; line-height: 1.7;">
-                                PF Challan Notepad is a simple document report used to prepare and record PF
-                                contribution details before submitting the official PF challan to the government portal.
-                            </div>
-                        </div>
-                        <div
-                            style="background: #f0fbfb; border-radius: 10px; margin-bottom: 12px; overflow: hidden; border: 1px solid #d4edef; padding: 16px 20px;">
-                            <div
-                                style="font-size: 15px; font-weight: 700; color: #1a2332; margin-bottom: 8px; display: flex; align-items: center;">
-                                <i class="fa fa-chevron-right"
-                                    style="color: #2fa3a8; font-size: 16px; margin-right: 10px;"></i>
-                                Where Can I Access PF Challan Notepad?
-                            </div>
-                            <div style="padding-left: 26px; font-size: 15px; color: #3d4f61; line-height: 1.7;">
-                                Open the PF Challan Notepad wizard from the Reporting menu under Indian HR Payroll after
-                                configuring company, employees, and salary rules.
-                            </div>
-                        </div>
-                        <div
-                            style="background: #f0fbfb; border-radius: 10px; margin-bottom: 12px; overflow: hidden; border: 1px solid #d4edef; padding: 16px 20px;">
-                            <div
-                                style="font-size: 15px; font-weight: 700; color: #1a2332; margin-bottom: 8px; display: flex; align-items: center;">
-                                <i class="fa fa-chevron-right"
-                                    style="color: #2fa3a8; font-size: 16px; margin-right: 10px;"></i>
-                                What Configuration Is Required Before Use?
-                            </div>
-                            <div style="padding-left: 26px; font-size: 15px; color: #3d4f61; line-height: 1.7;">
-                                Configure company with INR currency, assign employees with personal details, set up PF
-                                Employee, PF-Employeer, and Pension-Employeer salary rules, and generate payslips using
-                                the Indian salary structure.
-                            </div>
-                        </div>
-                        <div
-                            style="background: #f0fbfb; border-radius: 10px; margin-bottom: 12px; overflow: hidden; border: 1px solid #d4edef; padding: 16px 20px;">
-                            <div
-                                style="font-size: 15px; font-weight: 700; color: #1a2332; margin-bottom: 8px; display: flex; align-items: center;">
-                                <i class="fa fa-chevron-right"
-                                    style="color: #2fa3a8; font-size: 16px; margin-right: 10px;"></i>
-                                Which Odoo Module Does This Depend On?
-                            </div>
-                            <div style="padding-left: 26px; font-size: 15px; color: #3d4f61; line-height: 1.7;">
-                                This module requires the Indian HR Payroll app (l10n_in_hr_payroll) to be installed and
-                                configured.
-                            </div>
-                        </div>
-                        <div
-                            style="background: #f0fbfb; border-radius: 10px; margin-bottom: 12px; overflow: hidden; border: 1px solid #d4edef; padding: 16px 20px;">
-                            <div
-                                style="font-size: 15px; font-weight: 700; color: #1a2332; margin-bottom: 8px; display: flex; align-items: center;">
-                                <i class="fa fa-chevron-right"
-                                    style="color: #2fa3a8; font-size: 16px; margin-right: 10px;"></i>
-                                I Want Some Customization In This App. How Can I Request It?
-                            </div>
-                            <div style="padding-left: 26px; font-size: 15px; color: #3d4f61; line-height: 1.7;">
-                                Please contact us at <a href="mailto:hello@techvoot.com"
-                                    style="color: #2fa3a8; font-weight: 600; text-decoration: none;">hello@techvoot.com</a>
-                                to request customization.
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- ── SUPPORT ── -->
-                    <div id="tab-support" class="tab-pane fade" role="tabpanel" style="padding: 10px 0;">
-                        <div class="text-center mb-4 pb-3 border-bottom" style="border-color:#e8f8f8 !important;">
-                            <h2 class="fw-bold h3 mb-1" style="color:#1f7d82; font-weight:700;">Support &amp; Contact
-                            </h2>
-                            <p class="mb-0 small text-muted">Our team is ready to help with installation, configuration,
-                                and deployment</p>
-                        </div>
-                        <div class="row g-4 justify-content-center">
-                            <div class="col-lg-5 col-md-6 col-12 mb-3">
-                                <div class="card h-100 shadow-sm text-center p-4 border-2"
-                                    style="border-color:#2fa3a8; border-radius:14px; border: 2px solid #2fa3a8; background:#ffffff;">
-                                    <div class="display-4 mb-3" style="color:#2fa3a8; font-size:40px;">&#9993;</div>
-                                    <h4 class="fw-bold mb-2" style="color:#1a2332; font-weight:700;">Email Support</h4>
-                                    <p class="text-muted small mb-4" style="color:#6b7c8e; line-height:1.6;">Reach our
-                                        technical team for installation help, configuration guidance, or customization
-                                        requests. We respond within 24 hours.</p>
-                                    <a href="mailto:hello@techvoot.com" class="btn rounded-pill px-4 py-2 fw-bold"
-                                        style="background-color:#ffffff; color:#2fa3a8; border:1px solid #2fa3a8; text-decoration:none; font-weight:700; display:inline-block;">hello@techvoot.com</a>
-                                </div>
-                            </div>
-                            <div class="col-lg-5 col-md-6 col-12 mb-3">
-                                <div class="card h-100 shadow-sm text-center p-4 border-2"
-                                    style="border-color:#2fa3a8; border-radius:14px; border: 2px solid #2fa3a8; background:#ffffff;">
-                                    <div class="display-4 mb-3" style="color:#2fa3a8; font-size:40px;">&#127760;</div>
-                                    <h4 class="fw-bold mb-2" style="color:#1a2332; font-weight:700;">Techvoot Solutions
-                                    </h4>
-                                    <p class="text-muted small mb-4" style="color:#6b7c8e; line-height:1.6;">Odoo
-                                        implementation, customization, consulting, and migration services for businesses
-                                        worldwide.</p>
-                                    <span class="d-inline-block rounded-pill px-4 py-2 fw-bold"
-                                        style="background-color:#ffffff; color:#2fa3a8; border:1px solid #2fa3a8; font-weight:700;">www.techvoot.com</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div><!-- end tab-content-wrap -->
-            </div>
-        </div>
-
-
-        <section style="background-color:#ffffff; border-top:1px solid #e8f8f8;">
-            <div class="container py-5">
-                <style>
-                    .tv-recommend-card {
-                        transition: transform 0.2s ease, box-shadow 0.2s ease;
-                        border: 1px solid #e8f8f8 !important;
-                    }
-
-                    .tv-recommend-card:hover {
-                        transform: translateY(-5px);
-                        box-shadow: 0 10px 20px rgba(47, 163, 168, 0.1) !important;
-                        border-color: #2fa3a8 !important;
-                    }
-
-                    .tv-btn-primary {
-                        background-color: #2fa3a8 !important;
-                        color: #ffffff !important;
-                        transition: background-color 0.2s ease, transform 0.2s ease;
-                    }
-
-                    .tv-btn-primary:hover {
-                        background-color: #1f7d82 !important;
-                        color: #ffffff !important;
-                        transform: scale(1.02);
-                    }
-                </style>
-
-                <div class="row justify-content-center mb-4">
-                    <div class="col-lg-8 col-12 text-center">
-                        <span class="badge rounded-pill mb-2"
-                            style="background-color:#e8f8f8; color:#1f7d82; font-size:11px; padding:6px 14px; letter-spacing:1px; text-transform:uppercase;">More
-                            Odoo Apps</span>
-                        <h2 class="fw-bold mb-2" style="color:#2fa3a8; font-size:28px;">Recommended by Techvoot Solutions</h2>
-                        <div class="mx-auto mb-3" style="width:64px; height:4px; background-color:#2fa3a8; border-radius:4px;"></div>
-                        <p class="mb-0 text-muted" style="font-size:15px;">Discover more of our top-rated Odoo modules to streamline your business operations.</p>
-                    </div>
-                </div>
-
-                <div class="row g-4 justify-content-center mb-5">
-                    <!-- App 1: Product Barcode Generator -->
-                    <div class="col-lg-6 col-md-6 col-12">
-                        <a href="https://apps.odoo.com/apps/modules/19.0/tv_product_barcode_generate/" target="_blank"
-                            class="text-decoration-none card h-100 shadow-sm tv-recommend-card"
-                            style="border-radius:14px; overflow: hidden; background-color:#f0fbfb; display: block;">
-                            <div class="p-4 text-center">
-                                <div class="d-inline-flex align-items-center justify-content-center mb-3 rounded-circle"
-                                    style="width:70px; height:70px; background-color:#ffffff; border: 2px solid #2fa3a8; color:#2fa3a8; font-size:32px;">
-                                    <i class="fa fa-barcode"></i>
-                                </div>
-                                <h4 class="fw-bold mb-2" style="color:#1b325f; font-size:18px;">Product Barcode Generator</h4>
-                                <p class="mb-0 text-muted small" style="line-height:1.6; min-height:64px;">
-                                    Automatically generate unique, standardized product barcodes using sequence rules and custom formats.
-                                </p>
-                            </div>
-                        </a>
-                    </div>
-
-                    <!-- App 2: Direct Print Management -->
-                    <div class="col-lg-6 col-md-6 col-12">
-                        <a href="https://apps.odoo.com/apps/modules/19.0/tv_direct_print_management/" target="_blank"
-                            class="text-decoration-none card h-100 shadow-sm tv-recommend-card"
-                            style="border-radius:14px; overflow: hidden; background-color:#f0fbfb; display: block;">
-                            <div class="p-4 text-center">
-                                <div class="d-inline-flex align-items-center justify-content-center mb-3 rounded-circle"
-                                    style="width:70px; height:70px; background-color:#ffffff; border: 2px solid #2fa3a8; color:#2fa3a8; font-size:30px;">
-                                    <i class="fa fa-print"></i>
-                                </div>
-                                <h4 class="fw-bold mb-2" style="color:#1b325f; font-size:18px;">Direct Print Management</h4>
-                                <p class="mb-0 text-muted small" style="line-height:1.6; min-height:64px;">
-                                    Print reports, receipts, and shipping labels directly to any local, network, or thermal printer without downloading PDFs.
-                                </p>
-                            </div>
-                        </a>
-                    </div>
-
-                    <!-- App 3: All in One Helpdesk -->
-                    <div class="col-lg-6 col-md-6 col-12">
-                        <a href="https://apps.odoo.com/apps/modules/19.0/tv_service_desk/" target="_blank"
-                            class="text-decoration-none card h-100 shadow-sm tv-recommend-card"
-                            style="border-radius:14px; overflow: hidden; background-color:#f0fbfb; display: block;">
-                            <div class="p-4 text-center">
-                                <div class="d-inline-flex align-items-center justify-content-center mb-3 rounded-circle"
-                                    style="width:70px; height:70px; background-color:#ffffff; border: 2px solid #2fa3a8; color:#2fa3a8; font-size:30px;">
-                                    <i class="fa fa-ticket"></i>
-                                </div>
-                                <h4 class="fw-bold mb-2" style="color:#1b325f; font-size:18px;">All in One Helpdesk</h4>
-                                <p class="mb-0 text-muted small" style="line-height:1.6; min-height:64px;">
-                                    Streamline your support operations with custom stages, SLA rules, ticket priorities, and customer satisfaction tracking.
-                                </p>
-                            </div>
-                        </a>
-                    </div>
-
-                    <!-- App 4: Email Activity Tracking -->
-                    <div class="col-lg-6 col-md-6 col-12">
-                        <a href="https://apps.odoo.com/apps/modules/17.0/mail_activity_tracking/" target="_blank"
-                            class="text-decoration-none card h-100 shadow-sm tv-recommend-card"
-                            style="border-radius:14px; overflow: hidden; background-color:#f0fbfb; display: block;">
-                            <div class="p-4 text-center">
-                                <div class="d-inline-flex align-items-center justify-content-center mb-3 rounded-circle"
-                                    style="width:70px; height:70px; background-color:#ffffff; border: 2px solid #2fa3a8; color:#2fa3a8; font-size:30px;">
-                                    <i class="fa fa-envelope-o"></i>
-                                </div>
-                                <h4 class="fw-bold mb-2" style="color:#1b325f; font-size:18px;">Email Activity Tracking</h4>
-                                <p class="mb-0 text-muted small" style="line-height:1.6; min-height:64px;">
-                                    Email activity tracking system for all mails sent. Monitor delivery status, recipient actions, and keep your communication transparent.
-                                </p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="text-center">
-                    <a href="https://apps.odoo.com/apps/modules/browse?author=Techvoot%20Solutions" target="_blank"
-                        class="d-inline-block rounded-pill px-5 py-3 fw-bold text-decoration-none tv-btn-primary shadow-sm"
-                        style="font-size:15px;">
-                        <i class="fa fa-th-large me-2"></i>Explore All Techvoot Solutions Apps
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- ══════════════════════════════════════════
-         OUR SERVICES
-    ══════════════════════════════════════════ -->
-        <section class="md_services" style="padding: 50px 0px; background-color: transparent;">
-            <div class="container">
-                <div class="md_center text-center mb-5">
-                    <h2 style="font-size: 26px; font-weight: 800; color: #2fa3a8; margin: 0 0 6px 0;">Our Services</h2>
-                    <span
-                        style="display: block; width: 72px; height: 4px; background: linear-gradient(90deg, #2fa3a8, #7dd4d7); border-radius: 4px; margin: 14px auto 0;"></span>
-                </div>
-                <div class="row">
-                    <div class="col-md-3 text-center mb-3">
-                        <a href="https://www.techvoot.com/odoo/odoo-implementation" target="_blank"
-                            class="d-block p-4 shadow rounded mb-2 box text-decoration-none"
-                            style="background-color: #dfd7ff; border: 2px solid #9284d2; width: 100%; display: block; text-align: center; text-decoration: none;">
-                            <img src="info.png" alt="Odoo Implementation" class="mx-auto d-block mb-2"
-                                style="height: 55px;">
-                            <span class="d-block font-weight-bold"
-                                style="font-size: 18px; color: #604eaf; font-weight: bold; display: block; margin-top: 8px;">Odoo
-                                Implementation</span>
-                        </a>
-                    </div>
-
-                    <div class="col-md-3 text-center mb-3">
-                        <a href="https://www.techvoot.com/odoo/odoo-customisation" target="_blank"
-                            class="d-block p-4 shadow rounded mb-2 box text-decoration-none"
-                            style="background-color: #ffcee2; border: 2px solid #c5648c; width: 100%; display: block; text-align: center; text-decoration: none;">
-                            <img src="setting.png" alt="Odoo Customization" class="mx-auto d-block mb-2"
-                                style="height: 55px;">
-                            <span class="d-block font-weight-bold"
-                                style="font-size: 18px; color: #b54574; font-weight: bold; display: block; margin-top: 8px;">Odoo
-                                Customization</span>
-                        </a>
-                    </div>
-
-                    <div class="col-md-3 text-center mb-3">
-                        <a href="https://www.techvoot.com/odoo/odoo-consulting" target="_blank"
-                            class="d-block p-4 shadow rounded mb-2 box text-decoration-none"
-                            style="background-color: #dfe8b4; border: 2px solid #97a362; width: 100%; display: block; text-align: center; text-decoration: none;">
-                            <img src="user.png" alt="Odoo Consulting" class="mx-auto d-block mb-2"
-                                style="height: 55px;">
-                            <span class="d-block font-weight-bold"
-                                style="font-size: 18px; color: #7f9037; font-weight: bold; display: block; margin-top: 8px;">Odoo
-                                Consulting</span>
-                        </a>
-                    </div>
-
-                    <div class="col-md-3 text-center mb-3">
-                        <a href="https://www.techvoot.com/odoo/odoo-migration" target="_blank"
-                            class="d-block p-4 shadow rounded mb-2 box text-decoration-none"
-                            style="background-color: #eaddca; border: 2px solid #a38762; width: 100%; display: block; text-align: center; text-decoration: none;">
-                            <img src="mobileapp.png" alt="Odoo Migration" class="mx-auto d-block mb-2"
-                                style="height: 55px;">
-                            <span class="d-block font-weight-bold"
-                                style="font-size: 18px; color: #946d38; font-weight: bold; display: block; margin-top: 8px;">Odoo
-                                Migration</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
     </div>
+</section>
 
-</body>
+<!-- ==================== HERO SECTION ==================== -->
+<section style="background-color: #f0fbfb">
+    <div class="container py-5 px-4">
+        <div class="row align-items-center g-5">
+            <!-- Left Content -->
+            <div class="col-lg-6 col-md-12 col-12">
+                <!-- Badge -->
+                <span class="badge rounded-pill mb-3" style="
+            background-color: #e7f7f7;
+            color: #1f7d82;
+            border: 1px solid #cceced;
+            font-size: 11px;
+            padding: 8px 16px;
+            letter-spacing: 1px;
+            font-weight: 600;
+          ">
+                    INDIAN PAYROLL &amp; PF COMPLIANCE REPORTING
+                </span>
 
-</html>
+                <!-- Heading -->
+                <h1 class="fw-bold mb-3" style="color: #1b325f; font-size: 38px; line-height: 1.15">
+                    PF Challan Notepad for Odoo
+                </h1>
+
+                <!-- Description -->
+                <p class="mb-4" style="color: #5a6d85; font-size: 16px; line-height: 1.75">
+                    Prepare, organize, and review Provident Fund (PF) contribution details in Odoo before submitting the
+                    official PF challan to the government portal. Puts all employee PF contributions, UAN numbers, and
+                    salary breakdown in one structured report directly from confirmed payslips.
+                </p>
+
+                <!-- Feature Badges -->
+                <div class="d-flex flex-wrap gap-2 mb-4">
+                    <span class="rounded-pill px-3 py-2 fw-semibold" style="
+              background-color: #ffffff;
+              color: #5a6d85;
+              border: 1px solid #dceff0;
+              font-size: 12px;
+              border-radius: 20px !important;
+            ">
+                        Payslip-Based Data
+                    </span>
+
+                    <span class="rounded-pill px-3 py-2 fw-semibold" style="
+              background-color: #ffffff;
+              color: #5a6d85;
+              border: 1px solid #dceff0;
+              font-size: 12px;
+              border-radius: 20px !important;
+            ">
+                        Indian Salary Structure
+                    </span>
+
+                    <span class="rounded-pill px-3 py-2 fw-semibold" style="
+              background-color: #ffffff;
+              color: #5a6d85;
+              border: 1px solid #dceff0;
+              font-size: 12px;
+              border-radius: 20px !important;
+            ">
+                        Wizard Reporting Export
+                    </span>
+
+                    <span class="rounded-pill px-3 py-2 fw-semibold" style="
+              background-color: #ffffff;
+              color: #5a6d85;
+              border: 1px solid #dceff0;
+              font-size: 12px;
+              border-radius: 20px !important;
+            ">
+                        EPFO Compliance Ready
+                    </span>
+
+                    <span class="rounded-pill px-3 py-2 fw-semibold" style="
+              background-color: #ffffff;
+              color: #5a6d85;
+              border: 1px solid #dceff0;
+              font-size: 12px;
+              border-radius: 20px !important;
+            ">
+                        INR Currency
+                    </span>
+
+                    <span class="rounded-pill px-3 py-2 fw-semibold" style="
+              background-color: #ffffff;
+              color: #5a6d85;
+              border: 1px solid #dceff0;
+              font-size: 12px;
+              border-radius: 20px !important;
+            ">
+                        Salary Rules Integration
+                    </span>
+                </div>
+
+                <!-- CTA -->
+                <a href="#tv-resources" id="tv-explore-doc"
+                    class="btn px-4 py-2 fw-semibold text-decoration-none mb-0 tv-explore-btn" style="
+            background-color: #ffffff;
+            color: #2fa3a8;
+            border: 1px solid #2fa3a8;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 14px;
+            box-shadow: 0 4px 12px rgba(27, 50, 95, 0.06);
+            transition: all 0.15s ease;
+          ">
+                    <i class="fa fa-book me-2"></i>
+                    Explore Documentation
+                </a>
+            </div>
+
+            <!-- ==================== RIGHT FEATURE CARD ==================== -->
+            <div class="col-lg-6 col-md-12 col-12">
+                <div class="card h-100 border-0" style="
+            border-radius: 16px;
+            background-color: #ffffff;
+            border: 1px solid #dceff0 !important;
+            box-shadow: 0 10px 30px rgba(27, 50, 95, 0.07);
+          ">
+                    <div class="card-body p-3 p-lg-4">
+                        <!-- Feature 1 -->
+                        <div class="d-flex align-items-start mb-4 pb-4" style="border-bottom: 1px solid #edf4f5">
+                            <div class="d-flex align-items-center justify-content-center me-3 flex-shrink-0 rounded-3"
+                                style="
+                  width: 44px;
+                  height: 44px;
+                  background-color: #e8f8f8;
+                  color: #2fa3a8;
+                  font-size: 18px;
+                ">
+                                <i class="fa fa-star"></i>
+                            </div>
+
+                            <div>
+                                <div class="fw-bold mb-1" style="color: #1b325f">
+                                    Structured PF Reporting
+                                </div>
+
+                                <div class="small" style="color: #5a6d85; line-height: 1.6">
+                                    Prepare &amp; record PF contribution details before official challan submission
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Feature 2 -->
+                        <div class="d-flex align-items-start mb-4 pb-4" style="border-bottom: 1px solid #edf4f5">
+                            <div class="d-flex align-items-center justify-content-center me-3 flex-shrink-0 rounded-3"
+                                style="
+                  width: 44px;
+                  height: 44px;
+                  background-color: #e8f8f8;
+                  color: #2fa3a8;
+                  font-size: 18px;
+                ">
+                                <i class="fa fa-cogs"></i>
+                            </div>
+
+                            <div>
+                                <div class="fw-bold mb-1" style="color: #1b325f">
+                                    Indian Salary Rules Integration
+                                </div>
+
+                                <div class="small" style="color: #5a6d85; line-height: 1.6">
+                                    Supports PF Employee, PF Employer &amp; Pension Employer rules
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Feature 3 -->
+                        <div class="d-flex align-items-start mb-4 pb-4" style="border-bottom: 1px solid #edf4f5">
+                            <div class="d-flex align-items-center justify-content-center me-3 flex-shrink-0 rounded-3"
+                                style="
+                  width: 44px;
+                  height: 44px;
+                  background-color: #e8f8f8;
+                  color: #2fa3a8;
+                  font-size: 18px;
+                ">
+                                <i class="fa fa-exchange"></i>
+                            </div>
+
+                            <div>
+                                <div class="fw-bold mb-1" style="color: #1b325f">
+                                    Payslip Data Extraction
+                                </div>
+
+                                <div class="small" style="color: #5a6d85; line-height: 1.6">
+                                    Direct integration with Odoo Indian HR Payroll confirmed payslips
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Feature 4 -->
+                        <div class="d-flex align-items-start">
+                            <div class="d-flex align-items-center justify-content-center me-3 flex-shrink-0 rounded-3"
+                                style="
+                  width: 44px;
+                  height: 44px;
+                  background-color: #e8f8f8;
+                  color: #2fa3a8;
+                  font-size: 18px;
+                ">
+                                <i class="fa fa-bar-chart"></i>
+                            </div>
+
+                            <div>
+                                <div class="fw-bold mb-1" style="color: #1b325f">
+                                    Reporting Wizard &amp; Export
+                                </div>
+
+                                <div class="small" style="color: #5a6d85; line-height: 1.6">
+                                    Export complete PF Notepad reports across selected date ranges
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== BUILT FOR ENTERPRISE SCALE ==================== -->
+<section style="background-color: #ffffff">
+    <div class="container py-5 px-4">
+        <!-- Section Header -->
+        <div class="row justify-content-center mb-4">
+            <div class="col-lg-8 col-12 text-center">
+                <h2 class="fw-bold mb-2" style="color: #1b325f; font-size: 28px">
+                    Built For Enterprise Scale
+                </h2>
+                <div class="mx-auto mb-3" style="
+            width: 64px;
+            height: 4px;
+            background-color: #2fa3a8;
+            border-radius: 4px;
+          "></div>
+                <p class="mb-0" style="color: #5a6d85">
+                    Every tool your team needs to prepare and record Provident Fund (PF) contributions seamlessly in
+                    Odoo.
+                </p>
+            </div>
+        </div>
+
+        <!-- Side-by-Side Feature Cards (2 Grid) -->
+        <div class="row g-3 mb-4">
+            <!-- Left Feature Card -->
+            <div class="col-lg-6 col-md-6 col-12">
+                <div class="card h-100 shadow-sm border-0 p-4" style="
+            background-color: #ffffff;
+            border-radius: 14px;
+            border: 1px solid #dceff0 !important;
+            box-shadow: 0 8px 25px rgba(27, 50, 95, 0.06) !important;
+          ">
+                    <!-- Feature 1 -->
+                    <div class="d-flex align-items-start mb-4 pb-4" style="border-bottom: 1px solid #edf4f5">
+                        <div class="d-flex align-items-center justify-content-center me-3 flex-shrink-0" style="
+                width: 44px;
+                height: 44px;
+                border-radius: 12px;
+                background-color: #e6f7f8;
+                color: #2fa3a8;
+                font-size: 18px;
+              ">
+                            <i class="fa fa-users"></i>
+                        </div>
+
+                        <div>
+                            <div class="fw-bold mb-1" style="color: #1b325f">
+                                Company &amp; Employee Setup
+                            </div>
+
+                            <div class="small" style="color: #5a6d85; line-height: 1.6">
+                                Assign employee records to appropriate companies and configure Indian Rupee (INR)
+                                currency.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Feature 2 -->
+                    <div class="d-flex align-items-start mb-4 pb-4" style="border-bottom: 1px solid #edf4f5">
+                        <div class="d-flex align-items-center justify-content-center me-3 flex-shrink-0" style="
+                width: 44px;
+                height: 44px;
+                border-radius: 12px;
+                background-color: #e6f7f8;
+                color: #2fa3a8;
+                font-size: 18px;
+              ">
+                            <i class="fa fa-clock-o"></i>
+                        </div>
+
+                        <div>
+                            <div class="fw-bold mb-1" style="color: #1b325f">
+                                UAN &amp; Personal Info Record
+                            </div>
+
+                            <div class="small" style="color: #5a6d85; line-height: 1.6">
+                                Store Universal Account Number (UAN) and personal identifiers under Employee Private
+                                Information.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Feature 3 -->
+                    <div class="d-flex align-items-start">
+                        <div class="d-flex align-items-center justify-content-center me-3 flex-shrink-0" style="
+                width: 44px;
+                height: 44px;
+                border-radius: 12px;
+                background-color: #e6f7f8;
+                color: #2fa3a8;
+                font-size: 18px;
+              ">
+                            <i class="fa fa-bar-chart"></i>
+                        </div>
+
+                        <div>
+                            <div class="fw-bold mb-1" style="color: #1b325f">
+                                Salary Rules Integration Suite
+                            </div>
+
+                            <div class="small" style="color: #5a6d85; line-height: 1.6">
+                                Supports Employee PF, Employer PF, and Pension Employer salary rule calculations.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Feature Card -->
+            <div class="col-lg-6 col-md-6 col-12">
+                <div class="card h-100 shadow-sm border-0 p-4" style="
+            background-color: #ffffff;
+            border-radius: 14px;
+            border: 1px solid #dceff0 !important;
+            box-shadow: 0 8px 25px rgba(27, 50, 95, 0.06) !important;
+          ">
+                    <!-- Feature 1 -->
+                    <div class="d-flex align-items-start mb-4 pb-4" style="border-bottom: 1px solid #edf4f5">
+                        <div class="d-flex align-items-center justify-content-center me-3 flex-shrink-0" style="
+                width: 44px;
+                height: 44px;
+                border-radius: 12px;
+                background-color: #e6f7f8;
+                color: #2fa3a8;
+                font-size: 18px;
+              ">
+                            <i class="fa fa-user"></i>
+                        </div>
+
+                        <div>
+                            <div class="fw-bold mb-1" style="color: #1b325f">
+                                Confirmed Payslip Extraction
+                            </div>
+
+                            <div class="small" style="color: #5a6d85; line-height: 1.6">
+                                Automatically fetches data from salary slips created under Indian salary structure.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Feature 2 -->
+                    <div class="d-flex align-items-start mb-4 pb-4" style="border-bottom: 1px solid #edf4f5">
+                        <div class="d-flex align-items-center justify-content-center me-3 flex-shrink-0" style="
+                width: 44px;
+                height: 44px;
+                border-radius: 12px;
+                background-color: #e6f7f8;
+                color: #2fa3a8;
+                font-size: 18px;
+              ">
+                            <i class="fa fa-hourglass-half"></i>
+                        </div>
+
+                        <div>
+                            <div class="fw-bold mb-1" style="color: #1b325f">
+                                Reporting Wizard &amp; Selection
+                            </div>
+
+                            <div class="small" style="color: #5a6d85; line-height: 1.6">
+                                Access the wizard directly from Indian HR Payroll Reporting menu across any custom
+                                period.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Feature 3 -->
+                    <div class="d-flex align-items-start">
+                        <div class="d-flex align-items-center justify-content-center me-3 flex-shrink-0" style="
+                width: 44px;
+                height: 44px;
+                border-radius: 12px;
+                background-color: #e6f7f8;
+                color: #2fa3a8;
+                font-size: 18px;
+              ">
+                            <i class="fa fa-random"></i>
+                        </div>
+
+                        <div>
+                            <div class="fw-bold mb-1" style="color: #1b325f">
+                                EPFO Portal Verification
+                            </div>
+
+                            <div class="small" style="color: #5a6d85; line-height: 1.6">
+                                Provides organized documentation for review prior to official government challan filing.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stat Counter Row (4 Grid) -->
+        <div class="row g-4 text-center">
+            <!-- Card 1 -->
+            <div class="col-lg-3 col-md-6 col-6">
+                <div class="card h-100 border-0 py-4 px-3" style="
+            border-radius: 16px;
+            background-color: #f5fbfb;
+            border: 1px solid #dceff0 !important;
+            box-shadow: 0 6px 18px rgba(27, 50, 95, 0.06);
+          ">
+                    <div class="fw-bold mb-2" style="color: #1f7d82; font-size: 32px; line-height: 1.2">
+                        100%
+                    </div>
+
+                    <div class="fw-semibold" style="
+              color: #5a6d85;
+              font-size: 12px;
+              text-transform: uppercase;
+              letter-spacing: 0.8px;
+            ">
+                        Organized PF Records
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="col-lg-3 col-md-6 col-6">
+                <div class="card h-100 border-0 py-4 px-3" style="
+            border-radius: 16px;
+            background-color: #f5fbfb;
+            border: 1px solid #dceff0 !important;
+            box-shadow: 0 6px 18px rgba(27, 50, 95, 0.06);
+          ">
+                    <div class="fw-bold mb-2" style="color: #1f7d82; font-size: 32px; line-height: 1.2">
+                        Bulk
+                    </div>
+
+                    <div class="fw-semibold" style="
+              color: #5a6d85;
+              font-size: 12px;
+              text-transform: uppercase;
+              letter-spacing: 0.8px;
+            ">
+                        PF Preparation
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="col-lg-3 col-md-6 col-6">
+                <div class="card h-100 border-0 py-4 px-3" style="
+            border-radius: 16px;
+            background-color: #f5fbfb;
+            border: 1px solid #dceff0 !important;
+            box-shadow: 0 6px 18px rgba(27, 50, 95, 0.06);
+          ">
+                    <div class="fw-bold mb-2" style="color: #1f7d82; font-size: 32px; line-height: 1.2">
+                        v18
+                    </div>
+
+                    <div class="fw-semibold" style="
+              color: #5a6d85;
+              font-size: 12px;
+              text-transform: uppercase;
+              letter-spacing: 0.8px;
+            ">
+                        Odoo Enterprise
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="col-lg-3 col-md-6 col-6">
+                <div class="card h-100 border-0 py-4 px-3" style="
+            border-radius: 16px;
+            background-color: #f5fbfb;
+            border: 1px solid #dceff0 !important;
+            box-shadow: 0 6px 18px rgba(27, 50, 95, 0.06);
+          ">
+                    <div class="fw-bold mb-2" style="color: #1f7d82; font-size: 32px; line-height: 1.2">
+                        EPFO
+                    </div>
+
+                    <div class="fw-semibold" style="
+              color: #5a6d85;
+              font-size: 12px;
+              text-transform: uppercase;
+              letter-spacing: 0.8px;
+            ">
+                        Compliant Report
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== WHY CHOOSE PF CHALLAN NOTEPAD ==================== -->
+<section style="background-color: #f0fbfb">
+    <div class="container py-5 px-4">
+        <!-- ==================== SECTION HEADER ==================== -->
+        <div class="row justify-content-center mb-4">
+            <div class="col-lg-8 col-12 text-center">
+                <h2 class="fw-bold mb-2" style="color: #1b325f; font-size: 28px">
+                    Why Choose PF Challan Notepad
+                </h2>
+
+                <div class="mx-auto" style="
+            width: 64px;
+            height: 4px;
+            background-color: #2fa3a8;
+            border-radius: 4px;
+          "></div>
+            </div>
+        </div>
+
+        <!-- ==================== FEATURE CARDS (3x2 Grid) ==================== -->
+        <div class="row g-4">
+            <!-- Card 1 -->
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="card h-100 border-0" style="
+            border-radius: 14px;
+            background-color: #ffffff;
+            border: 1px solid #dceff0 !important;
+            box-shadow: 0 8px 25px rgba(27, 50, 95, 0.06);
+          ">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center justify-content-center mb-3 rounded-3" style="
+                width: 52px;
+                height: 52px;
+                background-color: #e8f8f8;
+                color: #2fa3a8;
+                font-size: 24px;
+              ">
+                            &#127919;
+                        </div>
+
+                        <h3 class="h5 fw-bold mb-2" style="color: #1b325f">
+                            Standalone &amp; Complete
+                        </h3>
+
+                        <p class="mb-0 small" style="color: #5a6d85; line-height: 1.7">
+                            Generates structured PF contribution reports directly within Odoo Enterprise without
+                            requiring external tools or spreadsheets.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="card h-100 border-0" style="
+            border-radius: 14px;
+            background-color: #ffffff;
+            border: 1px solid #dceff0 !important;
+            box-shadow: 0 8px 25px rgba(27, 50, 95, 0.06);
+          ">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center justify-content-center mb-3 rounded-3" style="
+                width: 52px;
+                height: 52px;
+                background-color: #e8f8f8;
+                color: #2fa3a8;
+                font-size: 24px;
+              ">
+                            &#128274;
+                        </div>
+
+                        <h3 class="h5 fw-bold mb-2" style="color: #1b325f">
+                            Company &amp; Currency Support
+                        </h3>
+
+                        <p class="mb-0 small" style="color: #5a6d85; line-height: 1.7">
+                            Configured with INR currency, company assignment, and complete employee personal details
+                            including UAN numbers.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="card h-100 border-0" style="
+            border-radius: 14px;
+            background-color: #ffffff;
+            border: 1px solid #dceff0 !important;
+            box-shadow: 0 8px 25px rgba(27, 50, 95, 0.06);
+          ">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center justify-content-center mb-3 rounded-3" style="
+                width: 52px;
+                height: 52px;
+                background-color: #e8f8f8;
+                color: #2fa3a8;
+                font-size: 24px;
+              ">
+                            &#9889;
+                        </div>
+
+                        <h3 class="h5 fw-bold mb-2" style="color: #1b325f">
+                            Salary Rule Integration
+                        </h3>
+
+                        <p class="mb-0 small" style="color: #5a6d85; line-height: 1.7">
+                            Supports Employee PF, Employer PF, and Employer Pension salary rules for precise and
+                            automated contribution calculation.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="card h-100 border-0" style="
+            border-radius: 14px;
+            background-color: #ffffff;
+            border: 1px solid #dceff0 !important;
+            box-shadow: 0 8px 25px rgba(27, 50, 95, 0.06);
+          ">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center justify-content-center mb-3 rounded-3" style="
+                width: 52px;
+                height: 52px;
+                background-color: #e8f8f8;
+                color: #2fa3a8;
+                font-size: 24px;
+              ">
+                            &#128279;
+                        </div>
+
+                        <h3 class="h5 fw-bold mb-2" style="color: #1b325f">
+                            Payslip Data Extraction
+                        </h3>
+
+                        <p class="mb-0 small" style="color: #5a6d85; line-height: 1.7">
+                            Extracts confirmed payroll data directly from Indian salary structure payslips for accurate
+                            tracking.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="card h-100 border-0" style="
+            border-radius: 14px;
+            background-color: #ffffff;
+            border: 1px solid #dceff0 !important;
+            box-shadow: 0 8px 25px rgba(27, 50, 95, 0.06);
+          ">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center justify-content-center mb-3 rounded-3" style="
+                width: 52px;
+                height: 52px;
+                background-color: #e8f8f8;
+                color: #2fa3a8;
+                font-size: 24px;
+              ">
+                            &#127760;
+                        </div>
+
+                        <h3 class="h5 fw-bold mb-2" style="color: #1b325f">
+                            Reporting Wizard
+                        </h3>
+
+                        <p class="mb-0 small" style="color: #5a6d85; line-height: 1.7">
+                            Access the wizard under Indian HR Payroll Reporting menu and export complete PF Notepad
+                            reports instantly.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="card h-100 border-0" style="
+            border-radius: 14px;
+            background-color: #ffffff;
+            border: 1px solid #dceff0 !important;
+            box-shadow: 0 8px 25px rgba(27, 50, 95, 0.06);
+          ">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center justify-content-center mb-3 rounded-3" style="
+                width: 52px;
+                height: 52px;
+                background-color: #e8f8f8;
+                color: #2fa3a8;
+                font-size: 24px;
+              ">
+                            &#128736;
+                        </div>
+
+                        <h3 class="h5 fw-bold mb-2" style="color: #1b325f">
+                            EPFO Compliance Ready
+                        </h3>
+
+                        <p class="mb-0 small" style="color: #5a6d85; line-height: 1.7">
+                            Prepares organized PF records for verification before submitting official government
+                            challans.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== CORE FEATURES ==================== -->
+<section style="background-color: #ffffff">
+    <div class="container py-5 px-4">
+        <!-- Section Header -->
+        <div class="row justify-content-center mb-4">
+            <div class="col-lg-8 col-12 text-center">
+                <h2 class="fw-bold mb-2" style="color: #1b325f; font-size: 28px">
+                    Core Features
+                </h2>
+
+                <div class="mx-auto mb-3" style="
+            width: 64px;
+            height: 4px;
+            background-color: #2fa3a8;
+            border-radius: 4px;
+          "></div>
+
+                <p class="mb-0" style="color: #5a6d85; line-height: 1.7">
+                    Comprehensive feature set covering every aspect of Provident Fund (PF) report preparation and
+                    verification.
+                </p>
+            </div>
+        </div>
+
+        <!-- Feature Grid (12 Horizontal Cards) -->
+        <div class="row g-4">
+            <!-- 1. PF Challan Notepad -->
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="card h-100 border-0 p-3" style="
+            border-radius: 14px;
+            background-color: #ffffff;
+            border: 1px solid #dceff0 !important;
+            box-shadow: 0 6px 20px rgba(27, 50, 95, 0.05);
+          ">
+                    <div class="d-flex align-items-start">
+                        <div class="d-flex align-items-center justify-content-center me-3 flex-shrink-0 rounded-3"
+                            style="
+                width: 44px;
+                height: 44px;
+                background-color: #e8f8f8;
+                color: #2fa3a8;
+                font-size: 18px;
+              ">
+                            <i class="fa fa-file-text-o"></i>
+                        </div>
+                        <div>
+                            <div class="fw-bold small mb-1" style="color: #1b325f">
+                                PF Challan Notepad Report
+                            </div>
+                            <p class="mb-0 small" style="color: #5a6d85">
+                                Generate structured document reports directly from confirmed payslips.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Company & Currency Setup -->
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="card h-100 border-0 p-3" style="
+            border-radius: 14px;
+            background-color: #ffffff;
+            border: 1px solid #dceff0 !important;
+            box-shadow: 0 6px 20px rgba(27, 50, 95, 0.05);
+          ">
+                    <div class="d-flex align-items-start">
+                        <div class="d-flex align-items-center justify-content-center me-3 flex-shrink-0 rounded-3"
+                            style="
+                width: 44px;
+                height: 44px;
+                background-color: #e8f8f8;
+                color: #2fa3a8;
+                font-size: 18px;
+              ">
+                            <i class="fa fa-building"></i>
+                        </div>
+                        <div>
+                            <div class="fw-bold small mb-1" style="color: #1b325f">
+                                Company &amp; Currency Setup
+                            </div>
+                            <p class="mb-0 small" style="color: #5a6d85">
+                                Configure active company with Indian Rupee (INR) currency.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. Employee Personal Info -->
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="card h-100 border-0 p-3" style="
+            border-radius: 14px;
+            background-color: #ffffff;
+            border: 1px solid #dceff0 !important;
+            box-shadow: 0 6px 20px rgba(27, 50, 95, 0.05);
+          ">
+                    <div class="d-flex align-items-start">
+                        <div class="d-flex align-items-center justify-content-center me-3 flex-shrink-0 rounded-3"
+                            style="
+                width: 44px;
+                height: 44px;
+                background-color: #e8f8f8;
+                color: #2fa3a8;
+                font-size: 18px;
+              ">
+                            <i class="fa fa-user"></i>
+                        </div>
+                        <div>
+                            <div class="fw-bold small mb-1" style="color: #1b325f">
+                                Employee Personal Info
+                            </div>
+                            <p class="mb-0 small" style="color: #5a6d85">
+                                Record UAN numbers, PAN details, and employee company assignment.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. Indian Salary Structure -->
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="card h-100 border-0 p-3" style="
+            border-radius: 14px;
+            background-color: #ffffff;
+            border: 1px solid #dceff0 !important;
+            box-shadow: 0 6px 20px rgba(27, 50, 95, 0.05);
+          ">
+                    <div class="d-flex align-items-start">
+                        <div class="d-flex align-items-center justify-content-center me-3 flex-shrink-0 rounded-3"
+                            style="
+                width: 44px;
+                height: 44px;
+                background-color: #e8f8f8;
+                color: #2fa3a8;
+                font-size: 18px;
+              ">
+                            <i class="fa fa-calculator"></i>
+                        </div>
+                        <div>
+                            <div class="fw-bold small mb-1" style="color: #1b325f">
+                                Indian Salary Structure
+                            </div>
+                            <p class="mb-0 small" style="color: #5a6d85">
+                                Supports Indian salary structure for payroll processing.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. Salary Rules Integration -->
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="card h-100 border-0 p-3" style="
+            border-radius: 14px;
+            background-color: #ffffff;
+            border: 1px solid #dceff0 !important;
+            box-shadow: 0 6px 20px rgba(27, 50, 95, 0.05);
+          ">
+                    <div class="d-flex align-items-start">
+                        <div class="d-flex align-items-center justify-content-center me-3 flex-shrink-0 rounded-3"
+                            style="
+                width: 44px;
+                height: 44px;
+                background-color: #e8f8f8;
+                color: #2fa3a8;
+                font-size: 18px;
+              ">
+                            <i class="fa fa-sliders"></i>
+                        </div>
+                        <div>
+                            <div class="fw-bold small mb-1" style="color: #1b325f">
+                                Salary Rules Integration
+                            </div>
+                            <p class="mb-0 small" style="color: #5a6d85">
+                                Supports Employee PF, Employer PF, and Pension Employer rules.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. Payslip Data Extraction -->
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="card h-100 border-0 p-3" style="
+            border-radius: 14px;
+            background-color: #ffffff;
+            border: 1px solid #dceff0 !important;
+            box-shadow: 0 6px 20px rgba(27, 50, 95, 0.05);
+          ">
+                    <div class="d-flex align-items-start">
+                        <div class="d-flex align-items-center justify-content-center me-3 flex-shrink-0 rounded-3"
+                            style="
+                width: 44px;
+                height: 44px;
+                background-color: #e8f8f8;
+                color: #2fa3a8;
+                font-size: 18px;
+              ">
+                            <i class="fa fa-list-alt"></i>
+                        </div>
+                        <div>
+                            <div class="fw-bold small mb-1" style="color: #1b325f">
+                                Payslip Data Extraction
+                            </div>
+                            <p class="mb-0 small" style="color: #5a6d85">
+                                Automatic extraction from confirmed payslip lines.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 7. Reporting Wizard -->
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="card h-100 border-0 p-3" style="
+            border-radius: 14px;
+            background-color: #ffffff;
+            border: 1px solid #dceff0 !important;
+            box-shadow: 0 6px 20px rgba(27, 50, 95, 0.05);
+          ">
+                    <div class="d-flex align-items-start">
+                        <div class="d-flex align-items-center justify-content-center me-3 flex-shrink-0 rounded-3"
+                            style="
+                width: 44px;
+                height: 44px;
+                background-color: #e8f8f8;
+                color: #2fa3a8;
+                font-size: 18px;
+              ">
+                            <i class="fa fa-hourglass-half"></i>
+                        </div>
+                        <div>
+                            <div class="fw-bold small mb-1" style="color: #1b325f">
+                                Reporting Wizard
+                            </div>
+                            <p class="mb-0 small" style="color: #5a6d85">
+                                Access reporting wizard directly from Indian HR Payroll menu.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 8. Date Range Filter -->
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="card h-100 border-0 p-3" style="
+            border-radius: 14px;
+            background-color: #ffffff;
+            border: 1px solid #dceff0 !important;
+            box-shadow: 0 6px 20px rgba(27, 50, 95, 0.05);
+          ">
+                    <div class="d-flex align-items-start">
+                        <div class="d-flex align-items-center justify-content-center me-3 flex-shrink-0 rounded-3"
+                            style="
+                width: 44px;
+                height: 44px;
+                background-color: #e8f8f8;
+                color: #2fa3a8;
+                font-size: 18px;
+              ">
+                            <i class="fa fa-calendar"></i>
+                        </div>
+                        <div>
+                            <div class="fw-bold small mb-1" style="color: #1b325f">
+                                Date Range Filter
+                            </div>
+                            <p class="mb-0 small" style="color: #5a6d85">
+                                Export PF Notepad summary across custom date ranges.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 9. EPFO Verification -->
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="card h-100 border-0 p-3" style="
+            border-radius: 14px;
+            background-color: #ffffff;
+            border: 1px solid #dceff0 !important;
+            box-shadow: 0 6px 20px rgba(27, 50, 95, 0.05);
+          ">
+                    <div class="d-flex align-items-start">
+                        <div class="d-flex align-items-center justify-content-center me-3 flex-shrink-0 rounded-3"
+                            style="
+                width: 44px;
+                height: 44px;
+                background-color: #e8f8f8;
+                color: #2fa3a8;
+                font-size: 18px;
+              ">
+                            <i class="fa fa-shield"></i>
+                        </div>
+                        <div>
+                            <div class="fw-bold small mb-1" style="color: #1b325f">
+                                EPFO Verification
+                            </div>
+                            <p class="mb-0 small" style="color: #5a6d85">
+                                Prepares organized PF records for government portal verification.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 10. Bulk Operations -->
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="card h-100 border-0 p-3" style="
+            border-radius: 14px;
+            background-color: #ffffff;
+            border: 1px solid #dceff0 !important;
+            box-shadow: 0 6px 20px rgba(27, 50, 95, 0.05);
+          ">
+                    <div class="d-flex align-items-start">
+                        <div class="d-flex align-items-center justify-content-center me-3 flex-shrink-0 rounded-3"
+                            style="
+                width: 44px;
+                height: 44px;
+                background-color: #e8f8f8;
+                color: #2fa3a8;
+                font-size: 18px;
+              ">
+                            <i class="fa fa-users"></i>
+                        </div>
+                        <div>
+                            <div class="fw-bold small mb-1" style="color: #1b325f">
+                                Bulk Operations
+                            </div>
+                            <p class="mb-0 small" style="color: #5a6d85">
+                                Processes all active employees across selected payroll periods.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 11. Odoo Enterprise Ready -->
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="card h-100 border-0 p-3" style="
+            border-radius: 14px;
+            background-color: #ffffff;
+            border: 1px solid #dceff0 !important;
+            box-shadow: 0 6px 20px rgba(27, 50, 95, 0.05);
+          ">
+                    <div class="d-flex align-items-start">
+                        <div class="d-flex align-items-center justify-content-center me-3 flex-shrink-0 rounded-3"
+                            style="
+                width: 44px;
+                height: 44px;
+                background-color: #e8f8f8;
+                color: #2fa3a8;
+                font-size: 18px;
+              ">
+                            <i class="fa fa-cubes"></i>
+                        </div>
+                        <div>
+                            <div class="fw-bold small mb-1" style="color: #1b325f">
+                                Odoo Enterprise Ready
+                            </div>
+                            <p class="mb-0 small" style="color: #5a6d85">
+                                Fully compatible with Odoo Enterprise and Odoo.sh deployments.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 12. Multi-Company Support -->
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="card h-100 border-0 p-3" style="
+            border-radius: 14px;
+            background-color: #ffffff;
+            border: 1px solid #dceff0 !important;
+            box-shadow: 0 6px 20px rgba(27, 50, 95, 0.05);
+          ">
+                    <div class="d-flex align-items-start">
+                        <div class="d-flex align-items-center justify-content-center me-3 flex-shrink-0 rounded-3"
+                            style="
+                width: 44px;
+                height: 44px;
+                background-color: #e8f8f8;
+                color: #2fa3a8;
+                font-size: 18px;
+              ">
+                            <i class="fa fa-sitemap"></i>
+                        </div>
+                        <div>
+                            <div class="fw-bold small mb-1" style="color: #1b325f">
+                                Multi-Company Support
+                            </div>
+                            <p class="mb-0 small" style="color: #5a6d85">
+                                Multi-company isolation and currency compliance out of the box.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== INTERACTIVE DOCUMENTATION & TABS SECTION ==================== -->
+<section id="tv-resources" tabindex="-1" style="
+    background-color: #f0fbfb;
+    scroll-margin-top: 80px;
+    outline: none;
+    --nav-pills-link-active-color: #ffffff;
+    --nav-pills-link-active-bg: #2fa3a8;
+    --bs-nav-pills-link-active-color: #ffffff;
+    --bs-nav-pills-link-active-bg: #2fa3a8;
+    --bs-nav-pills-border-radius: 8px;
+    --nav-pills-border-radius: 8px;
+  ">
+    <div class="container py-5 px-lg-5">
+        <!-- Top Pill Nav Container -->
+        <div class="bg-white px-3 pt-2 shadow-sm"
+            style="border-bottom: 1px solid #e1e7ec; border-radius: 16px 16px 0 0">
+            <ul class="nav nav-pills justify-content-center flex-wrap mb-0" id="tv-main-tabs" role="tablist" style="
+          --nav-pills-link-active-color: #ffffff;
+          --nav-pills-link-active-bg: #2fa3a8;
+          --bs-nav-pills-link-active-color: #ffffff;
+          --bs-nav-pills-link-active-bg: #2fa3a8;
+          --bs-nav-pills-border-radius: 8px 8px 0 0;
+          --nav-pills-border-radius: 8px 8px 0 0;
+        ">
+                <!-- Documentation -->
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link active fw-semibold d-flex align-items-center gap-2" id="tab-doc-link"
+                        data-bs-toggle="tab" data-bs-target="#tab-documentation" href="#tab-documentation" role="tab"
+                        aria-controls="tab-documentation" aria-selected="true">
+                        <i class="fa fa-book"></i>
+                        <span>Documentation</span>
+                    </a>
+                </li>
+
+                <!-- Releases -->
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link fw-semibold d-flex align-items-center gap-2" id="tab-rel-link"
+                        data-bs-toggle="tab" data-bs-target="#tab-releases" href="#tab-releases" role="tab"
+                        aria-controls="tab-releases" aria-selected="false">
+                        <i class="fa fa-tag"></i>
+                        <span>Releases</span>
+                    </a>
+                </li>
+
+                <!-- FAQs -->
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link fw-semibold d-flex align-items-center gap-2" id="tab-faq-link"
+                        data-bs-toggle="tab" data-bs-target="#tab-faqs" href="#tab-faqs" role="tab"
+                        aria-controls="tab-faqs" aria-selected="false">
+                        <i class="fa fa-question-circle"></i>
+                        <span>FAQs</span>
+                    </a>
+                </li>
+
+                <!-- Support -->
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link fw-semibold d-flex align-items-center gap-2" id="tab-sup-link"
+                        data-bs-toggle="tab" data-bs-target="#tab-support" href="#tab-support" role="tab"
+                        aria-controls="tab-support" aria-selected="false">
+                        <i class="fa fa-life-ring"></i>
+                        <span>Support</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Main Tab Content Area -->
+        <div class="tab-content bg-white shadow-sm p-4 p-lg-5" style="
+        border: 1px solid #d4edef;
+        border-radius: 0 0 16px 16px;
+        min-height: 420px;
+      ">
+            <!-- ==================== TAB 1: INTERACTIVE DOCUMENTATION ==================== -->
+            <div id="tab-documentation" class="tab-pane fade show active" role="tabpanel"
+                aria-labelledby="tab-doc-link">
+                <div id="tv-doc-anchor" tabindex="-1" class="text-center mb-4 pb-3 border-bottom" style="
+            border-color: #e8f8f8 !important;
+            scroll-margin-top: 80px;
+            outline: none;
+          ">
+                    <div class="d-inline-flex align-items-center justify-content-center mb-2" style="
+              width: 46px;
+              height: 46px;
+              border-radius: 12px;
+              background-color: #e6f7f8;
+              color: #2fa3a8;
+            ">
+                        <i class="fa fa-book fa-lg"></i>
+                    </div>
+
+                    <h2 class="fw-bold h3 mb-1" style="color: #1b325f">
+                        Interactive Product Documentation
+                    </h2>
+
+                    <p class="mb-0 small text-muted">
+                        Select a feature from the sidebar only that setup guide and screenshot is shown
+                    </p>
+                </div>
+
+                <div class="row g-4">
+                    <!-- Left Sidebar Nav -->
+                    <div class="col-lg-3 col-12">
+                        <div class="setup-guide-sidebar" style="
+                background-color: #ffffff;
+                border: 1px solid #d4edef;
+                border-left: 4px solid #2fa3a8;
+                border-radius: 8px;
+                overflow: hidden;
+              ">
+                            <div class="fw-bold small text-uppercase d-flex align-items-center gap-2 px-3 pt-3 pb-2"
+                                style="
+                  color: #1b325f;
+                  letter-spacing: 0.5px;
+                  background-color: #f3fafa;
+                  border-bottom: 1px solid #d4edef;
+                ">
+                                <i class="fa fa-list" style="color: #2fa3a8"></i>
+                                Setup Guide
+                            </div>
+                            <div class="overflow-auto px-2 py-3" style="max-height: 510px; scrollbar-width: thin">
+                                <style>
+                                    #tv-setup-tabs .nav-link.active {
+                                        font-weight: 700 !important;
+                                    }
+                                </style>
+                                <div class="nav flex-column nav-pills" id="tv-setup-tabs" role="tablist" style="
+                    --nav-pills-link-active-color: #ffffff;
+                    --nav-pills-link-active-bg: #2fa3a8;
+                    --bs-nav-pills-link-active-color: #ffffff;
+                    --bs-nav-pills-link-active-bg: #2fa3a8;
+                    --bs-nav-pills-border-radius: 8px;
+                    --nav-pills-border-radius: 8px;
+                  ">
+                                    <a href="#setup-configurations" data-bs-toggle="tab"
+                                        data-bs-target="#setup-configurations" role="tab"
+                                        aria-controls="setup-configurations" aria-selected="true"
+                                        class="nav-link active d-block text-start text-decoration-none mb-2 fw-semibold"
+                                        style="border-radius: 8px">
+                                        <i class="fa fa-sliders me-2"></i>
+                                        Configurations
+                                    </a>
+
+                                    <a href="#setup-company_assignment" data-bs-toggle="tab"
+                                        data-bs-target="#setup-company_assignment" role="tab"
+                                        aria-controls="setup-company_assignment" aria-selected="false"
+                                        class="nav-link d-block text-start text-decoration-none mb-2 fw-semibold"
+                                        style="border-radius: 8px">
+                                        <i class="fa fa-building me-2"></i>
+                                        Company Assignment
+                                    </a>
+
+                                    <a href="#setup-uan_private_info" data-bs-toggle="tab"
+                                        data-bs-target="#setup-uan_private_info" role="tab"
+                                        aria-controls="setup-uan_private_info" aria-selected="false"
+                                        class="nav-link d-block text-start text-decoration-none mb-2 fw-semibold"
+                                        style="border-radius: 8px">
+                                        <i class="fa fa-user me-2"></i>
+                                        UAN &amp; Private Info
+                                    </a>
+
+                                    <a href="#setup-pf_salary_rules" data-bs-toggle="tab"
+                                        data-bs-target="#setup-pf_salary_rules" role="tab"
+                                        aria-controls="setup-pf_salary_rules" aria-selected="false"
+                                        class="nav-link d-block text-start text-decoration-none mb-2 fw-semibold"
+                                        style="border-radius: 8px">
+                                        <i class="fa fa-calculator me-2"></i>
+                                        PF Salary Rules
+                                    </a>
+
+                                    <a href="#setup-indian_payslips" data-bs-toggle="tab"
+                                        data-bs-target="#setup-indian_payslips" role="tab"
+                                        aria-controls="setup-indian_payslips" aria-selected="false"
+                                        class="nav-link d-block text-start text-decoration-none mb-2 fw-semibold"
+                                        style="border-radius: 8px">
+                                        <i class="fa fa-file-text-o me-2"></i>
+                                        Indian Payslips
+                                    </a>
+
+                                    <a href="#setup-export_report" data-bs-toggle="tab"
+                                        data-bs-target="#setup-export_report" role="tab"
+                                        aria-controls="setup-export_report" aria-selected="false"
+                                        class="nav-link d-block text-start text-decoration-none mb-2 fw-semibold"
+                                        style="border-radius: 8px">
+                                        <i class="fa fa-bar-chart me-2"></i>
+                                        PF Notepad Export
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Content Panel -->
+                    <div class="col-lg-9 col-12">
+                        <div class="setup-guide-content" style="
+                background-color: #ffffff;
+                border: 1px solid #d4edef;
+                border-radius: 8px;
+                overflow: hidden;
+              ">
+                            <div class="fw-bold small text-uppercase d-flex align-items-center gap-2 px-3 pt-3 pb-2"
+                                style="
+                  color: #1b325f;
+                  letter-spacing: 0.5px;
+                  background-color: #f3fafa;
+                  border-bottom: 1px solid #d4edef;
+                ">
+                                <i class="fa fa-book" style="color: #2fa3a8"></i>
+                                Feature Details
+                            </div>
+
+                            <div class="overflow-auto px-3 py-3" style="max-height: 510px; scrollbar-width: thin">
+                                <div class="tab-content" id="tv-setup-tab-content">
+                                    <!-- Pane 1: Configurations -->
+                                    <div id="setup-configurations" class="tab-pane fade show active" role="tabpanel">
+                                        <h4 class="fw-bold mb-2" style="color: #1b325f">
+                                            Configurations
+                                        </h4>
+
+                                        <div class="mb-4">
+                                            <p class="text-muted mb-3" style="line-height: 1.75">
+                                                Ensure your active company in Odoo is configured with Indian Rupee (INR)
+                                                currency for accurate Provident Fund (PF) calculations and compliance
+                                                reporting.
+                                            </p>
+                                            <div class="text-center p-2 rounded-3" style="
+                          background-color: #f8fbfc;
+                          border: 1px solid #e1e7ec;
+                        ">
+                                                <img src="s01.png" alt="Configure Company INR Currency"
+                                                    class="img-fluid rounded-3"
+                                                    style="box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06)" />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Pane 2: Company Assignment -->
+                                    <div id="setup-company_assignment" class="tab-pane fade" role="tabpanel">
+                                        <h4 class="fw-bold mb-2" style="color: #1b325f">
+                                            Company Assignment
+                                        </h4>
+
+                                        <div class="mb-4">
+                                            <p class="text-muted mb-3" style="line-height: 1.75">
+                                                Assign employee records to the appropriate company in the Employee
+                                                module to ensure proper multi-company data segregation.
+                                            </p>
+                                            <div class="text-center p-2 rounded-3" style="
+                          background-color: #f8fbfc;
+                          border: 1px solid #e1e7ec;
+                        ">
+                                                <img src="s02.png" alt="Configure Employee Company"
+                                                    class="img-fluid rounded-3"
+                                                    style="box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06)" />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Pane 3: UAN & Private Info -->
+                                    <div id="setup-uan_private_info" class="tab-pane fade" role="tabpanel">
+                                        <h4 class="fw-bold mb-2" style="color: #1b325f">
+                                            UAN &amp; Personal Info Record
+                                        </h4>
+
+                                        <div class="mb-4">
+                                            <p class="text-muted mb-3" style="line-height: 1.75">
+                                                Fill in employee personal details, including Universal Account Number
+                                                (UAN), PAN, and PF membership details under Employee Private
+                                                Information.
+                                            </p>
+                                            <div class="text-center p-2 rounded-3" style="
+                          background-color: #f8fbfc;
+                          border: 1px solid #e1e7ec;
+                        ">
+                                                <img src="s03.png" alt="Configure Employee Personal Information"
+                                                    class="img-fluid rounded-3"
+                                                    style="box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06)" />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Pane 4: PF Salary Rules -->
+                                    <div id="setup-pf_salary_rules" class="tab-pane fade" role="tabpanel">
+                                        <h4 class="fw-bold mb-2" style="color: #1b325f">
+                                            Configure Indian Salary Rules for PF
+                                        </h4>
+
+                                        <div class="mb-4">
+                                            <p class="text-muted mb-3" style="line-height: 1.75">
+                                                Configure salary rules for PF Employee, PF Employer, and Pension
+                                                Employer under the Indian Salary Structure in Payroll.
+                                            </p>
+                                            <div class="text-center p-2 rounded-3" style="
+                          background-color: #f8fbfc;
+                          border: 1px solid #e1e7ec;
+                        ">
+                                                <img src="s04.png" alt="Configure PF Salary Rules"
+                                                    class="img-fluid rounded-3"
+                                                    style="box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06)" />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Pane 5: Indian Payslips -->
+                                    <div id="setup-indian_payslips" class="tab-pane fade" role="tabpanel">
+                                        <h4 class="fw-bold mb-2" style="color: #1b325f">
+                                            Generate Indian Salary Slips
+                                        </h4>
+
+                                        <div class="mb-4">
+                                            <p class="text-muted mb-3" style="line-height: 1.75">
+                                                Generate and compute payslips for your employees using the configured
+                                                Indian salary structure for the desired payroll period.
+                                            </p>
+                                            <div class="text-center p-2 rounded-3" style="
+                          background-color: #f8fbfc;
+                          border: 1px solid #e1e7ec;
+                        ">
+                                                <img src="s05.png" alt="Generate Indian Salary Slip"
+                                                    class="img-fluid rounded-3"
+                                                    style="box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06)" />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Pane 6: Export Report -->
+                                    <div id="setup-export_report" class="tab-pane fade" role="tabpanel">
+                                        <h4 class="fw-bold mb-2" style="color: #1b325f">
+                                            Open Wizard &amp; Export PF Challan Notepad
+                                        </h4>
+
+                                        <div class="mb-4">
+                                            <p class="text-muted mb-3" style="line-height: 1.75">
+                                                Navigate to Indian HR Payroll &gt; Reporting &gt; PF Challan Notepad,
+                                                choose the date period, and click to export the complete report.
+                                            </p>
+                                            <div class="text-center p-2 rounded-3" style="
+                          background-color: #f8fbfc;
+                          border: 1px solid #e1e7ec;
+                        ">
+                                                <img src="s06.png" alt="PF Challan Notepad Report Export"
+                                                    class="img-fluid rounded-3"
+                                                    style="box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06)" />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ==================== TAB 2: RELEASES ==================== -->
+            <div id="tab-releases" class="tab-pane fade" role="tabpanel" aria-labelledby="tab-rel-link">
+                <div class="text-center mb-5 pb-3 border-bottom" style="border-color: #e8f8f8 !important;">
+                    <div class="d-inline-flex align-items-center justify-content-center mb-2" style="
+              width: 48px;
+              height: 48px;
+              border-radius: 12px;
+              background-color: #e8f8f8;
+              color: #2fa3a8;
+            ">
+                        <i class="fa fa-tag fa-lg"></i>
+                    </div>
+                    <h2 class="fw-bold h3 mb-1" style="color: #1b325f">
+                        Releases &amp; Update Log
+                    </h2>
+                    <p class="mb-0 small text-muted">
+                        Track official updates, improvements, and releases for PF Challan Notepad
+                    </p>
+                </div>
+
+                <div class="row g-3 mb-5 justify-content-center">
+                    <div class="col-lg-4 col-md-4 col-12">
+                        <div class="h-100 d-flex align-items-center p-3" style="
+                background-color: #ffffff;
+                border: 1px solid #e1e7ec;
+                border-radius: 10px;
+                box-shadow: 0 2px 8px rgba(27, 50, 95, 0.05);
+              ">
+                            <div class="d-flex align-items-center justify-content-center flex-shrink-0" style="
+                  width: 50px;
+                  height: 50px;
+                  border-radius: 10px;
+                  background-color: #e6f7f8;
+                  color: #2fa3a8;
+                ">
+                                <i class="fa fa-code-fork fa-lg"></i>
+                            </div>
+                            <div class="ms-3">
+                                <div class="small text-muted">Current Version</div>
+                                <div class="fw-bold" style="color: #1b325f; font-size: 20px">
+                                    18.0.1.0
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-4 col-12">
+                        <div class="h-100 d-flex align-items-center p-3" style="
+                background-color: #ffffff;
+                border: 1px solid #e1e7ec;
+                border-radius: 10px;
+                box-shadow: 0 2px 8px rgba(27, 50, 95, 0.05);
+              ">
+                            <div class="d-flex align-items-center justify-content-center flex-shrink-0" style="
+                  width: 50px;
+                  height: 50px;
+                  border-radius: 10px;
+                  background-color: #e6f7f8;
+                  color: #2fa3a8;
+                ">
+                                <i class="fa fa-calendar fa-lg"></i>
+                            </div>
+                            <div class="ms-3">
+                                <div class="small text-muted">Latest Release Date</div>
+                                <div class="fw-bold" style="color: #1b325f; font-size: 17px">
+                                    30<sup>th</sup> April 2025
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-4 col-12">
+                        <div class="h-100 d-flex align-items-center p-3" style="
+                background-color: #ffffff;
+                border: 1px solid #e1e7ec;
+                border-radius: 10px;
+                box-shadow: 0 2px 8px rgba(27, 50, 95, 0.05);
+              ">
+                            <div class="d-flex align-items-center justify-content-center flex-shrink-0" style="
+                  width: 50px;
+                  height: 50px;
+                  border-radius: 10px;
+                  background-color: #e6f7f8;
+                  color: #2fa3a8;
+                ">
+                                <i class="fa fa-rocket fa-lg"></i>
+                            </div>
+                            <div class="ms-3">
+                                <div class="small text-muted">Release Type</div>
+                                <div class="fw-bold" style="color: #1b325f; font-size: 17px">
+                                    Initial Release
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-4" style="background-color: #f8fbfc; border: 1px solid #e1e7ec; border-radius: 12px;">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="d-flex align-items-center justify-content-center me-2" style="
+                width: 34px;
+                height: 34px;
+                border-radius: 8px;
+                background-color: #2fa3a8;
+                color: #ffffff;
+              ">
+                            <i class="fa fa-code-fork"></i>
+                        </div>
+                        <div>
+                            <h5 class="fw-bold mb-0" style="color: #1b325f">Version 18.0.1.0</h5>
+                            <small class="text-muted">30<sup>th</sup> April 2025</small>
+                        </div>
+                    </div>
+                    <div class="ps-2">
+                        <p class="mb-0 text-muted small">
+                            Initial public release of PF Challan Notepad for Odoo Enterprise.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ==================== TAB 3: FAQS ==================== -->
+            <div id="tab-faqs" class="tab-pane fade" role="tabpanel" aria-labelledby="tab-faq-link">
+                <!-- FAQ Header -->
+                <div class="text-center mb-4 pb-3 border-bottom" style="border-color: #e8f8f8 !important">
+                    <div class="d-inline-flex align-items-center justify-content-center mb-2" style="
+              width: 48px;
+              height: 48px;
+              border-radius: 12px;
+              background-color: #e8f8f8;
+              color: #2fa3a8;
+            ">
+                        <i class="fa fa-question-circle fa-lg" style="color: #2fa3a8"></i>
+                    </div>
+
+                    <h2 class="fw-bold h3 mb-1" style="color: #1b325f">
+                        Frequently Asked Questions
+                    </h2>
+
+                    <p class="mb-0 small text-muted">
+                        Common questions about installation, compatibility, and features
+                    </p>
+                </div>
+
+                <!-- FAQ List -->
+                <div class="row justify-content-center">
+                    <div class="col-lg-10 col-12">
+                        <!-- FAQ 1 -->
+                        <details class="mb-3" style="
+                border: 1px solid #dcebed;
+                border-radius: 10px;
+                background-color: #ffffff;
+                overflow: hidden;
+                box-shadow: 0 2px 6px rgba(27, 50, 95, 0.05);
+              ">
+                            <summary class="d-flex align-items-center justify-content-between fw-semibold" style="
+                  cursor: pointer;
+                  padding: 16px 18px;
+                  color: #1b325f;
+                  list-style: none;
+                ">
+                                <span>
+                                    <i class="fa fa-cubes me-2" style="color: #2fa3a8"></i>
+                                    Does this require Indian HR Payroll?
+                                </span>
+
+                                <i class="fa fa-question-circle ms-3" style="color: #2fa3a8; font-size: 14px"></i>
+                            </summary>
+
+                            <div class="px-4 pb-3 small" style="
+                  line-height: 1.7;
+                  background-color: #f3fafa;
+                  color: #1b325f;
+                  border-top: 1px solid #d4edef;
+                  padding-top: 14px !important;
+                ">
+                                Yes. PF Challan Notepad requires Odoo's Indian HR Payroll (`l10n_in_hr_payroll`) module
+                                to extract salary slip rules and employee UAN information.
+                            </div>
+                        </details>
+
+                        <!-- FAQ 2 -->
+                        <details class="mb-3" style="
+                border: 1px solid #dcebed;
+                border-radius: 10px;
+                background-color: #ffffff;
+                overflow: hidden;
+                box-shadow: 0 2px 6px rgba(27, 50, 95, 0.05);
+              ">
+                            <summary class="d-flex align-items-center justify-content-between fw-semibold" style="
+                  cursor: pointer;
+                  padding: 16px 18px;
+                  color: #1b325f;
+                  list-style: none;
+                ">
+                                <span>
+                                    <i class="fa fa-code-fork me-2" style="color: #2fa3a8"></i>
+                                    Which Odoo versions are supported?
+                                </span>
+
+                                <i class="fa fa-question-circle ms-3" style="color: #2fa3a8; font-size: 14px"></i>
+                            </summary>
+
+                            <div class="px-4 pb-3 small" style="
+                  line-height: 1.7;
+                  background-color: #f3fafa;
+                  color: #1b325f;
+                  border-top: 1px solid #d4edef;
+                  padding-top: 14px !important;
+                ">
+                                Built for Odoo 18 on Enterprise Edition and Odoo.sh deployments.
+                            </div>
+                        </details>
+
+                        <!-- FAQ 3 -->
+                        <details class="mb-3" style="
+                border: 1px solid #dcebed;
+                border-radius: 10px;
+                background-color: #ffffff;
+                overflow: hidden;
+                box-shadow: 0 2px 6px rgba(27, 50, 95, 0.05);
+              ">
+                            <summary class="d-flex align-items-center justify-content-between fw-semibold" style="
+                  cursor: pointer;
+                  padding: 16px 18px;
+                  color: #1b325f;
+                  list-style: none;
+                ">
+                                <span>
+                                    <i class="fa fa-users me-2" style="color: #2fa3a8"></i>
+                                    How does PF data calculation work?
+                                </span>
+
+                                <i class="fa fa-question-circle ms-3" style="color: #2fa3a8; font-size: 14px"></i>
+                            </summary>
+
+                            <div class="px-4 pb-3 small" style="
+                  line-height: 1.7;
+                  background-color: #f3fafa;
+                  color: #1b325f;
+                  border-top: 1px solid #d4edef;
+                  padding-top: 14px !important;
+                ">
+                                The module pulls confirmed payslip line items associated with Employee PF, Employer PF,
+                                and Employer Pension salary rules to generate the PF Notepad document.
+                            </div>
+                        </details>
+
+                        <!-- FAQ 4 -->
+                        <details class="mb-3" style="
+                border: 1px solid #dcebed;
+                border-radius: 10px;
+                background-color: #ffffff;
+                overflow: hidden;
+                box-shadow: 0 2px 6px rgba(27, 50, 95, 0.05);
+              ">
+                            <summary class="d-flex align-items-center justify-content-between fw-semibold" style="
+                  cursor: pointer;
+                  padding: 16px 18px;
+                  color: #1b325f;
+                  list-style: none;
+                ">
+                                <span>
+                                    <i class="fa fa-clock-o me-2" style="color: #2fa3a8"></i>
+                                    Where can I find the reporting wizard?
+                                </span>
+
+                                <i class="fa fa-question-circle ms-3" style="color: #2fa3a8; font-size: 14px"></i>
+                            </summary>
+
+                            <div class="px-4 pb-3 small" style="
+                  line-height: 1.7;
+                  background-color: #f3fafa;
+                  color: #1b325f;
+                  border-top: 1px solid #d4edef;
+                  padding-top: 14px !important;
+                ">
+                                Navigate to Indian HR Payroll &gt; Reporting &gt; PF Challan Notepad to launch the date
+                                selection wizard.
+                            </div>
+                        </details>
+
+                        <!-- FAQ 5 -->
+                        <details class="mb-3" style="
+                border: 1px solid #dcebed;
+                border-radius: 10px;
+                background-color: #ffffff;
+                overflow: hidden;
+                box-shadow: 0 2px 6px rgba(27, 50, 95, 0.05);
+              ">
+                            <summary class="d-flex align-items-center justify-content-between fw-semibold" style="
+                  cursor: pointer;
+                  padding: 16px 18px;
+                  color: #1b325f;
+                  list-style: none;
+                ">
+                                <span>
+                                    <i class="fa fa-globe me-2" style="color: #2fa3a8"></i>
+                                    Does it support multi-company setup?
+                                </span>
+
+                                <i class="fa fa-question-circle ms-3" style="color: #2fa3a8; font-size: 14px"></i>
+                            </summary>
+
+                            <div class="px-4 pb-3 small" style="
+                  line-height: 1.7;
+                  background-color: #f3fafa;
+                  color: #1b325f;
+                  border-top: 1px solid #d4edef;
+                  padding-top: 14px !important;
+                ">
+                                Yes. Reports are isolated by active company and pull employee contributions assigned to
+                                the current active company.
+                            </div>
+                        </details>
+
+                        <!-- FAQ 6 -->
+                        <details class="mb-3" style="
+                border: 1px solid #dcebed;
+                border-radius: 10px;
+                background-color: #ffffff;
+                overflow: hidden;
+                box-shadow: 0 2px 6px rgba(27, 50, 95, 0.05);
+              ">
+                            <summary class="d-flex align-items-center justify-content-between fw-semibold" style="
+                  cursor: pointer;
+                  padding: 16px 18px;
+                  color: #1b325f;
+                  list-style: none;
+                ">
+                                <span>
+                                    <i class="fa fa-money me-2" style="color: #2fa3a8"></i>
+                                    Is INR currency required?
+                                </span>
+
+                                <i class="fa fa-question-circle ms-3" style="color: #2fa3a8; font-size: 14px"></i>
+                            </summary>
+
+                            <div class="px-4 pb-3 small" style="
+                  line-height: 1.7;
+                  background-color: #f3fafa;
+                  color: #1b325f;
+                  border-top: 1px solid #d4edef;
+                  padding-top: 14px !important;
+                ">
+                                Yes. Indian HR Payroll and EPFO compliance calculations are performed in Indian Rupee
+                                (INR) currency.
+                            </div>
+                        </details>
+
+                        <!-- FAQ 7 -->
+                        <details class="mb-0" style="
+                border: 1px solid #dcebed;
+                border-radius: 10px;
+                background-color: #ffffff;
+                overflow: hidden;
+                box-shadow: 0 2px 6px rgba(27, 50, 95, 0.05);
+              ">
+                            <summary class="d-flex align-items-center justify-content-between fw-semibold" style="
+                  cursor: pointer;
+                  padding: 16px 18px;
+                  color: #1b325f;
+                  list-style: none;
+                ">
+                                <span>
+                                    <i class="fa fa-life-ring me-2" style="color: #2fa3a8"></i>
+                                    How do I request customization?
+                                </span>
+
+                                <i class="fa fa-question-circle ms-3" style="color: #2fa3a8; font-size: 14px"></i>
+                            </summary>
+
+                            <div class="px-4 pb-3 small" style="
+                  line-height: 1.7;
+                  background-color: #f3fafa;
+                  color: #1b325f;
+                  border-top: 1px solid #d4edef;
+                  padding-top: 14px !important;
+                ">
+                                Contact Techvoot Solutions at
+                                <a href="mailto:services@techvoot.com" class="fw-semibold text-decoration-none"
+                                    style="color: #2fa3a8 !important">
+                                    services@techvoot.com
+                                </a>
+                                for customization, implementation support, or enterprise deployment assistance.
+                            </div>
+                        </details>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ==================== TAB 4: SUPPORT ==================== -->
+            <div id="tab-support" class="tab-pane fade" role="tabpanel" aria-labelledby="tab-sup-link">
+                <div class="text-center mb-4 pb-3 border-bottom" style="border-color: #e8f8f8 !important">
+                    <div class="d-inline-flex align-items-center justify-content-center mb-2" style="
+              width: 46px;
+              height: 46px;
+              border-radius: 12px;
+              background-color: #e6f7f8;
+              color: #2fa3a8;
+            ">
+                        <i class="fa fa-life-ring fa-lg"></i>
+                    </div>
+
+                    <h2 class="fw-bold h3 mb-1" style="color: #1b325f">
+                        Support &amp; Contact
+                    </h2>
+
+                    <p class="mb-0 small text-muted" style="color: #1b325f">
+                        Our team is ready to help with installation, configuration, and deployment
+                    </p>
+                </div>
+
+                <div class="row g-4 justify-content-center">
+                    <!-- Left Card: Email Support -->
+                    <div class="col-lg-5 col-md-6 col-12">
+                        <div class="h-100 p-4 text-center d-flex align-items-center flex-column" style="
+                background-color: #ffffff;
+                border: 1px solid #d4edef;
+                border-top: 4px solid #1f7d82;
+                border-radius: 12px;
+                box-shadow: 0 4px 12px rgba(27, 50, 95, 0.08);
+              ">
+                            <div class="d-inline-flex align-items-center justify-content-center mb-3" style="
+                  width: 52px;
+                  height: 52px;
+                  border-radius: 12px;
+                  background-color: #e6f7f8;
+                  color: #2fa3a8;
+                ">
+                                <i class="fa fa-envelope fa-lg"></i>
+                            </div>
+
+                            <h4 class="fw-bold mb-2" style="color: #1b325f">Email Support</h4>
+
+                            <p class="text-muted small mb-4">
+                                Reach our technical team for installation help, configuration guidance, or customization
+                                requests. We respond within 24 hours.
+                            </p>
+
+                            <a href="mailto:services@techvoot.com"
+                                class="d-inline-flex align-items-center justify-content-center text-decoration-none fw-semibold"
+                                style="
+                  background-color: #f0fbfb;
+                  color: #2fa3a8;
+                  border: 1px solid #d4edef;
+                  border-radius: 8px;
+                  padding: 10px 18px;
+                  font-size: 13px;
+                  margin-top: auto;
+                ">
+                                <i class="fa fa-envelope me-2"></i>
+                                services@techvoot.com
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Right Card: Techvoot Solutions -->
+                    <div class="col-lg-5 col-md-6 col-12">
+                        <div class="h-100 p-4 text-center d-flex align-items-center flex-column" style="
+                background-color: #ffffff;
+                border: 1px solid #d4edef;
+                border-top: 4px solid #1f7d82;
+                border-radius: 12px;
+                box-shadow: 0 4px 12px rgba(27, 50, 95, 0.08);
+              ">
+                            <div class="d-inline-flex align-items-center justify-content-center mb-3" style="
+                  width: 52px;
+                  height: 52px;
+                  border-radius: 12px;
+                  background-color: #e6f7f8;
+                  color: #1f7d82;
+                ">
+                                <i class="fa fa-globe fa-lg"></i>
+                            </div>
+
+                            <h4 class="fw-bold mb-2" style="color: #1b325f">
+                                Techvoot Solutions
+                            </h4>
+
+                            <p class="text-muted small mb-4">
+                                Odoo implementation, customization, consulting, and migration services for businesses
+                                worldwide.
+                            </p>
+
+                            <a href="https://www.techvoot.com" target="_blank"
+                                class="d-inline-flex align-items-center justify-content-center text-decoration-none fw-semibold"
+                                style="
+                  background-color: #f0fbfb;
+                  color: #2fa3a8;
+                  border: 1px solid #d4edef;
+                  border-radius: 8px;
+                  padding: 10px 18px;
+                  font-size: 13px;
+                  margin-top: auto;
+                ">
+                                <i class="fa fa-globe me-2"></i>
+                                www.techvoot.com
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ==================== RECOMMENDED APPS ==================== -->
+<section style="background-color: #ffffff; border-top: 1px solid #e8f8f8">
+    <div class="container py-5">
+        <div class="row justify-content-center mb-4">
+            <div class="col-lg-8 col-12 text-center">
+                <span class="badge rounded-pill mb-2" style="
+            background-color: #e8f8f8;
+            color: #1f7d82;
+            font-size: 11px;
+            padding: 6px 14px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+          ">
+                    More Odoo Apps
+                </span>
+                <h2 class="fw-bold mb-2" style="color: #1b325f; font-size: 28px">
+                    Recommended by Techvoot Solutions
+                </h2>
+                <div class="mx-auto mb-3" style="
+            width: 64px;
+            height: 4px;
+            background-color: #2fa3a8;
+            border-radius: 4px;
+          "></div>
+                <p class="mb-0 text-muted" style="font-size: 15px">
+                    Discover more of our top-rated Odoo modules to streamline your business operations.
+                </p>
+            </div>
+        </div>
+
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-10 col-12">
+                <!-- ==================== APP 1 ==================== -->
+                <a href="https://apps.odoo.com/apps/modules/18.0/tv_product_barcode_generate/" target="_blank"
+                    class="text-decoration-none d-flex flex-column flex-md-row align-items-center text-center text-md-start tv-recommend-card mb-3"
+                    style="
+            border-radius: 14px;
+            background-color: #ffffff;
+            border: 1px solid #dceff0;
+            border-left: 4px solid #2fa3a8;
+            box-shadow: 0 6px 20px rgba(27, 50, 95, 0.05);
+            padding: 18px 20px;
+          ">
+                    <div class="d-flex align-items-center justify-content-center me-md-3 mb-3 mb-md-0 flex-shrink-0 rounded-3"
+                        style="
+              width: 44px;
+              height: 44px;
+              background-color: #e8f8f8;
+              color: #2fa3a8;
+              font-size: 18px;
+            ">
+                        <i class="fa fa-barcode"></i>
+                    </div>
+                    <div class="flex-grow-1">
+                        <div class="fw-bold mb-1" style="color: #1b325f; font-size: 16px">
+                            Product Barcode Generator
+                        </div>
+                        <div class="small mb-0" style="color: #5a6d85; line-height: 1.6">
+                            Automatically generate unique, standardized product barcodes using sequence rules and custom
+                            formats.
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-center flex-shrink-0 ms-md-3 mt-3 mt-md-0 rounded-3"
+                        style="
+              width: 36px;
+              height: 36px;
+              background-color: #e8f8f8;
+              color: #2fa3a8;
+              font-size: 14px;
+            ">
+                        <i class="fa fa-external-link"></i>
+                    </div>
+                </a>
+
+                <!-- ==================== APP 2 ==================== -->
+                <a href="https://apps.odoo.com/apps/modules/18.0/tv_service_desk/" target="_blank"
+                    class="text-decoration-none d-flex flex-column flex-md-row align-items-center text-center text-md-start tv-recommend-card mb-3"
+                    style="
+            border-radius: 14px;
+            background-color: #ffffff;
+            border: 1px solid #dceff0;
+            border-left: 4px solid #2fa3a8;
+            box-shadow: 0 6px 20px rgba(27, 50, 95, 0.05);
+            padding: 18px 20px;
+          ">
+                    <div class="d-flex align-items-center justify-content-center me-md-3 mb-3 mb-md-0 flex-shrink-0 rounded-3"
+                        style="
+              width: 44px;
+              height: 44px;
+              background-color: #e8f8f8;
+              color: #2fa3a8;
+              font-size: 18px;
+            ">
+                        <i class="fa fa-life-ring"></i>
+                    </div>
+                    <div class="flex-grow-1">
+                        <div class="fw-bold mb-1" style="color: #1b325f; font-size: 16px">
+                            All In One Helpdesk Management
+                        </div>
+                        <div class="small mb-0" style="color: #5a6d85; line-height: 1.6">
+                            Complete ticketing system, SLA policy engine, customer portal, timesheet tracking, and
+                            multi-team support desk for Odoo.
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-center flex-shrink-0 ms-md-3 mt-3 mt-md-0 rounded-3"
+                        style="
+              width: 36px;
+              height: 36px;
+              background-color: #e8f8f8;
+              color: #2fa3a8;
+              font-size: 14px;
+            ">
+                        <i class="fa fa-external-link"></i>
+                    </div>
+                </a>
+
+                <!-- ==================== APP 3 ==================== -->
+                <a href="https://apps.odoo.com/apps/modules/18.0/tv_ai_description_enhancer/" target="_blank"
+                    class="text-decoration-none d-flex flex-column flex-md-row align-items-center text-center text-md-start tv-recommend-card mb-3"
+                    style="
+            border-radius: 14px;
+            background-color: #ffffff;
+            border: 1px solid #dceff0;
+            border-left: 4px solid #2fa3a8;
+            box-shadow: 0 6px 20px rgba(27, 50, 95, 0.05);
+            padding: 18px 20px;
+          ">
+                    <div class="d-flex align-items-center justify-content-center me-md-3 mb-3 mb-md-0 flex-shrink-0 rounded-3"
+                        style="
+              width: 44px;
+              height: 44px;
+              background-color: #e8f8f8;
+              color: #2fa3a8;
+              font-size: 18px;
+            ">
+                        <i class="fa fa-pencil-square-o"></i>
+                    </div>
+                    <div class="flex-grow-1">
+                        <div class="fw-bold mb-1" style="color: #1b325f; font-size: 16px">
+                            AI Copywriter &amp; Description Enhancer
+                        </div>
+                        <div class="small mb-0" style="color: #5a6d85; line-height: 1.6">
+                            AI-powered text refinement, tone adjustment, multi-language translation, and grammar
+                            corrections for Odoo description fields.
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-center flex-shrink-0 ms-md-3 mt-3 mt-md-0 rounded-3"
+                        style="
+              width: 36px;
+              height: 36px;
+              background-color: #e8f8f8;
+              color: #2fa3a8;
+              font-size: 14px;
+            ">
+                        <i class="fa fa-external-link"></i>
+                    </div>
+                </a>
+
+                <!-- ==================== APP 4 ==================== -->
+                <a href="https://apps.odoo.com/apps/modules/17.0/mail_activity_tracking/" target="_blank"
+                    class="text-decoration-none d-flex flex-column flex-md-row align-items-center text-center text-md-start tv-recommend-card mb-0"
+                    style="
+            border-radius: 14px;
+            background-color: #ffffff;
+            border: 1px solid #dceff0;
+            border-left: 4px solid #2fa3a8;
+            box-shadow: 0 6px 20px rgba(27, 50, 95, 0.05);
+            padding: 18px 20px;
+          ">
+                    <div class="d-flex align-items-center justify-content-center me-md-3 mb-3 mb-md-0 flex-shrink-0 rounded-3"
+                        style="
+              width: 44px;
+              height: 44px;
+              background-color: #e8f8f8;
+              color: #2fa3a8;
+              font-size: 18px;
+            ">
+                        <i class="fa fa-envelope-o"></i>
+                    </div>
+                    <div class="flex-grow-1">
+                        <div class="fw-bold mb-1" style="color: #1b325f; font-size: 16px">
+                            Email Activity Tracking
+                        </div>
+                        <div class="small mb-0" style="color: #5a6d85; line-height: 1.6">
+                            Email activity tracking system for all mails sent. Monitor delivery status, recipient
+                            actions, and keep your communication transparent.
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-center flex-shrink-0 ms-md-3 mt-3 mt-md-0 rounded-3"
+                        style="
+              width: 36px;
+              height: 36px;
+              background-color: #e8f8f8;
+              color: #2fa3a8;
+              font-size: 14px;
+            ">
+                        <i class="fa fa-external-link"></i>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="text-center">
+            <a href="https://apps.odoo.com/apps/modules/browse?author=Techvoot%20Solutions" target="_blank"
+                class="d-inline-flex align-items-center justify-content-center gap-2 fw-semibold text-decoration-none"
+                style="
+          color: #2fa3a8;
+          background-color: #ffffff;
+          border: 1px solid #2fa3a8;
+          border-radius: 10px;
+          padding: 12px 24px;
+          font-size: 14px;
+          box-shadow: 0 4px 12px rgba(27, 50, 95, 0.06);
+          transition: all 0.2s ease;
+        ">
+                <i class="fa fa-th-large"></i>
+                <span>Explore All Techvoot Solutions Apps</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== FOOTER ==================== -->
+<section style="background-color: #f5fbfb; border-top: 1px solid #dceff0">
+    <div class="px-3 py-2 mx-auto" style="max-width: 1140px">
+        <div
+            class="d-flex flex-column flex-md-row align-items-center justify-content-between gap-3 text-center text-md-start">
+            <div class="d-flex align-items-center gap-2">
+                <div class="d-flex align-items-center justify-content-center" style="
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            background-color: #e7f7f7;
+            color: #2fa3a8;
+          ">
+                    <i class="fa fa-file-text-o"></i>
+                </div>
+                <span class="fw-semibold" style="color: #1b325f; font-size: 14px">
+                    PF Challan Notepad
+                </span>
+            </div>
+
+            <div class="small" style="color: #5a6d85; font-size: 12px">
+                &copy; 2026 Techvoot Solutions
+                <span style="color: #2fa3a8">&bull;</span>
+                Built for Odoo 18
+            </div>
+        </div>
+    </div>
+</section>
