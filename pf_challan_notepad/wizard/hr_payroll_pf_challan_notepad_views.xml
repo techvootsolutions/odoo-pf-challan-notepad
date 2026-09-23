@@ -8,20 +8,20 @@
             <form string="PF Challan Notepad">
                 <span class="o_form_label text-muted">Generate an Text report based on Paid payslips for the selected period of time.</span>
                 <footer>
-                    <button name="action_export_text" string="Export Text" type="object" class="btn-primary" data-hotkey="q"/>
-                    <button string="Cancel" class="btn-secondary" special="cancel" data-hotkey="x" />
+                    <button name="action_export_text" string="Export Text" type="object" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
                 </footer>
                 <group class="mt-2">
                     <field name="month" class="o_hr_narrow_field"/>
-                    <field name="year" class="o_hr_narrow_field" options="{'type': 'number'}"/>
+                    <field name="year" class="o_hr_narrow_field"/>
                     <separator string="Employees" />
                     <field name="employee_ids" nolabel="1" colspan="2" context="{'list_view_ref' : 'l10n_in_hr_payroll.hr_employee_tree_inherit'}">
-                        <list no_open="True" create="False">
+                        <tree no_open="True" create="False">
                             <field name="name" string="Employee Name"/>
                             <field name="registration_number" string="Employee Code"/>
                             <field name="department_id" string="Department"/>
                             <field name="job_id" string="Job Position"/>
-                        </list>
+                        </tree>
                     </field>
                 </group>
             </form>
@@ -37,9 +37,9 @@
 
     <menuitem
         name="PF Challan Notepad"
-        parent="l10n_in_hr_payroll.menu_reporting_l10n_in"
+        parent="hr_payroll.menu_hr_payroll_report"
         action="action_pf_challan_notepad"
-        sequence="400"
+        sequence="30"
         id="menu_pf_challan_notepad"
         groups="hr_payroll.group_hr_payroll_manager,hr_payroll.group_hr_payroll_user"
         />

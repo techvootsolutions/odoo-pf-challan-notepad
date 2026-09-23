@@ -1,5 +1,6 @@
 import base64
 import calendar
+from datetime import datetime
 from odoo import api, fields, models
 
 MONTH_SELECTION = [
@@ -17,6 +18,12 @@ MONTH_SELECTION = [
     ('12', 'December'),
 ]
 
+def _get_year_selection():
+    current_year = datetime.now().year
+    return [(str(year), str(year)) for year in range(current_year - 10, current_year + 5)]
+
+YEAR_SELECTION = _get_year_selection()
+
 
 class PFChallanNotepadWizard(models.TransientModel):
     _name = 'pf.challan.notepad.wizard'
@@ -27,9 +34,9 @@ class PFChallanNotepadWizard(models.TransientModel):
         return [('id', 'in', employees)]
 
     month = fields.Selection(MONTH_SELECTION, default='1', required=True)
-    year = fields.Integer(required=True, default=lambda self: fields.Date.context_today(self).year)
+    year = fields.Selection(YEAR_SELECTION, required=True, default=lambda self: str(fields.Date.context_today(self).year))
     employee_ids = fields.Many2many('hr.employee', 'emp_pf_challan_notepad_rel', 'pf_challan_notepad_id', 'employee_id', string='Employees', required=True,
-                                    store=True, readonly=False, domain=_get_employee_ids_domain)
+                                    store=True, readonly=False, domain=lambda self: self._get_employee_ids_domain())
 
     @api.model
     def _get_employee_pf_data(self, year, month, employee_ids):
@@ -76,7 +83,7 @@ class PFChallanNotepadWizard(models.TransientModel):
         return payslip_data
 
     def action_export_text(self):
-        report_data = self._get_employee_pf_data(self.year, self.month, self.employee_ids)
+        report_data = self._get_employee_pf_data(int(self.year), self.month, self.employee_ids)
 
         # Prepare the TXT content
         txt_content = ""
@@ -86,9 +93,10 @@ class PFChallanNotepadWizard(models.TransientModel):
         txt_data = base64.b64encode(txt_content.encode('utf-8'))
 
         # Create an attachment in Odoo
-        month_description = dict(self._fields['month']._description_selection(self.env))
+        month_description = dict(MONTH_SELECTION)
+        year_value = int(self.year) if isinstance(self.year, str) else self.year
         attachment = self.env['ir.attachment'].create({
-            'name': f'{month_description.get(self.month)}-{self.year} PF Challan Notepad.txt',
+            'name': f'{month_description.get(self.month)}-{year_value} PF Challan Notepad.txt',
             'datas': txt_data,
             'type': 'binary',
             'mimetype': 'text/plain',
