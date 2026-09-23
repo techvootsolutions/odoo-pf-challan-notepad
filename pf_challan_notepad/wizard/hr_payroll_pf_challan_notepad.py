@@ -42,8 +42,8 @@ class PFChallanNotepadWizard(models.TransientModel):
 
         payslips = self.env['hr.payslip'].search([
             ('employee_id', 'in', employee_ids.ids),
-            ('date_from', '>=', f'{year}-{month}-1'),
-            ('date_to', '<=', f'{year}-{month}-{end_date}'),
+            ('date_from', '>=', f'{year}-{int(month):02d}-01'),
+            ('date_to', '<=', f'{year}-{int(month):02d}-{end_date:02d}'),
             ('state', 'in', ('done', 'paid'))
         ])
 
@@ -86,9 +86,10 @@ class PFChallanNotepadWizard(models.TransientModel):
         txt_data = base64.b64encode(txt_content.encode('utf-8'))
 
         # Create an attachment in Odoo
-        month_description = dict(self._fields['month']._description_selection(self.env))
+        month_selection_dict = dict(MONTH_SELECTION)
+        month_name = month_selection_dict.get(self.month, 'Unknown')
         attachment = self.env['ir.attachment'].create({
-            'name': f'{month_description.get(self.month)}-{self.year} PF Challan Notepad.txt',
+            'name': f'{month_name}-{self.year} PF Challan Notepad.txt',
             'datas': txt_data,
             'type': 'binary',
             'mimetype': 'text/plain',
