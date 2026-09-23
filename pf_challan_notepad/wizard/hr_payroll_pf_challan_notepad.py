@@ -23,7 +23,9 @@ class PFChallanNotepadWizard(models.TransientModel):
     _description = 'Indian Payroll: Employee PF Challan Notepad'
 
     def _get_employee_ids_domain(self):
-        employees = self.env['hr.payslip'].search([]).employee_id.filtered(lambda e: e.company_id.country_id.code == "IN").ids
+        employees = self.env['hr.payslip'].search([]).employee_id.filtered(
+            lambda e: e.company_id and e.company_id.country_id and e.company_id.country_id.code == "IN"
+        ).ids
         return [('id', 'in', employees)]
 
     month = fields.Selection(MONTH_SELECTION, default='1', required=True)
@@ -39,11 +41,12 @@ class PFChallanNotepadWizard(models.TransientModel):
 
         result = []
         end_date = calendar.monthrange(year, int(month))[1]
+        month_padded = str(month).zfill(2)
 
         payslips = self.env['hr.payslip'].search([
             ('employee_id', 'in', employee_ids.ids),
-            ('date_from', '>=', f'{year}-{month}-1'),
-            ('date_to', '<=', f'{year}-{month}-{end_date}'),
+            ('date_from', '>=', f'{year}-{month}-1'),          
+            ('date_to', '<=', f'{year}-{month}-{end_date}'),    
             ('state', 'in', ('done', 'paid'))
         ])
 
